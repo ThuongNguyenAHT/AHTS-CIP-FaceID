@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>CIP Admin · Đăng nhập</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="login-body">
+<main class="login-layout">
+    <section class="login-intro">
+        <div class="brand-mark brand-mark-light">CIP</div>
+        <p class="eyebrow">CIP CONFIRMATION</p>
+        <h1>Vận hành rõ ràng.<br>Thông tin tức thời.</h1>
+        <p>Theo dõi trạng thái xác nhận của hành khách tại một nơi duy nhất.</p>
+    </section>
+
+    <section class="login-panel">
+        <form id="loginForm" class="login-card">
+            <p class="eyebrow accent">QUẢN TRỊ HỆ THỐNG</p>
+            <h2>Đăng nhập</h2>
+            <p class="muted">Sử dụng tài khoản được cấp để tiếp tục.</p>
+
+            <label for="username">Tên đăng nhập</label>
+            <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+
+            <label for="password">Mật khẩu</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+            <p id="loginError" class="inline-error hidden" role="alert"></p>
+            <button id="loginButton" class="button button-primary button-full" type="submit">Đăng nhập</button>
+        </form>
+    </section>
+</main>
+<script src="/js/admin-login.js" defer></script>
+</body>
+</html>

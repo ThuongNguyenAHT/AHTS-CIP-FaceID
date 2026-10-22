@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "IIS Express": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\IIS Express\\iisexpress.exe",
+      "commandLineArgs": "/path:\"d:\\AHT-App\\CIP Confirmation\\CIP Confirmation\\src\\Cip.Server.Net40\\bin\\Debug\\net40\\site\" /port:5189 /clr:v4.0",
+      "workingDirectory": "d:\\AHT-App\\CIP Confirmation\\CIP Confirmation\\src\\Cip.Server.Net40",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:5189/tablet"
+    }
+  }
+}

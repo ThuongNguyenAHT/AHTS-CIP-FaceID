@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cip.Server.Net40.SmokeHost</RootNamespace>
+    <AssemblyName>Cip.Server.Net40.SmokeHost</AssemblyName>
+    <LangVersion>4</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Cip.Server.Net40\Cip.Server.Net40.csproj" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+
+  <Target Name="CreateLegacySmokeSite" AfterTargets="Build">
+    <PropertyGroup>
+      <LegacySiteRoot>$(MSBuildProjectDirectory)\..\..\src\Cip.Server.Net40\bin\$(Configuration)\net40\site\</LegacySiteRoot>
+      <SmokeSiteRoot>$(OutputPath)site\</SmokeSiteRoot>
+    </PropertyGroup>
+    <MakeDir Directories="$(SmokeSiteRoot);$(SmokeSiteRoot)bin" />
+    <Delete Files="$(SmokeSiteRoot)Global.asax" />
+    <Copy SourceFiles="$(LegacySiteRoot)web.config" DestinationFolder="$(SmokeSiteRoot)" />
+    <Copy SourceFiles="$(LegacySiteRoot)bin\Cip.Server.Net40.dll;$(TargetPath)" DestinationFolder="$(SmokeSiteRoot)bin" />
+  </Target>
+
+</Project>

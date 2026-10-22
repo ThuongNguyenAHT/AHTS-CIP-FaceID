@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cip.Server.Net40</RootNamespace>
+    <AssemblyName>Cip.Server.Net40</AssemblyName>
+    <LangVersion>4</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Cip.Server\WebPages\admin-login.html">
+      <LogicalName>Cip.Server.Net40.Assets.admin-login.html</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\WebPages\admin.html">
+      <LogicalName>Cip.Server.Net40.Assets.admin.html</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\WebPages\tablet.html">
+      <LogicalName>Cip.Server.Net40.Assets.tablet.html</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\wwwroot\css\site.css">
+      <LogicalName>Cip.Server.Net40.Assets.site.css</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\wwwroot\js\admin-login.js">
+      <LogicalName>Cip.Server.Net40.Assets.admin-login.js</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\wwwroot\js\admin.js">
+      <LogicalName>Cip.Server.Net40.Assets.admin.js</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\wwwroot\js\tablet.js">
+      <LogicalName>Cip.Server.Net40.Assets.tablet.js</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="CreateLegacyIisSite" AfterTargets="Build">
+    <PropertyGroup>
+      <LegacySiteRoot>$(OutputPath)site\</LegacySiteRoot>
+    </PropertyGroup>
+    <MakeDir Directories="$(LegacySiteRoot);$(LegacySiteRoot)bin" />
+    <Delete Files="$(LegacySiteRoot)Global.asax" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(LegacySiteRoot)bin" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(LegacySiteRoot)bin"
+          Condition="Exists('$(TargetDir)$(AssemblyName).pdb')" />
+    <Copy SourceFiles="web.config" DestinationFolder="$(LegacySiteRoot)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>CIP Admin · Điều phối tablet</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="admin-body">
+<aside class="sidebar">
+    <div class="sidebar-brand">
+        <div class="brand-mark brand-mark-light">CIP</div>
+        <div>
+            <strong>Confirmation</strong>
+            <span>Reception portal</span>
+        </div>
+    </div>
+    <nav>
+        <a class="nav-link active" href="#dashboard">Tổng quan</a>
+        <a class="nav-link" href="#passengers">Khách mới</a>
+    </nav>
+    <div class="sidebar-footer">
+        <span id="currentUser">Lễ tân</span>
+        <button id="logoutButton" class="text-button" type="button">Đăng xuất</button>
+    </div>
+</aside>
+
+<main class="admin-main">
+    <header class="admin-header">
+        <div>
+            <p class="eyebrow accent">CIP RECEPTION</p>
+            <h1>Điều phối xác nhận</h1>
+            <p id="lastUpdated" class="muted">Nhấn “Làm mới” sau khi quét vé để tải khách mới.</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+            <button id="simulateScanButton" class="button button-secondary compact" type="button" title="Giả lập Bravo quét 1 vé mới">🧪 Quét vé giả lập</button>
+            <button id="refreshButton" class="button button-secondary compact" type="button">Làm mới danh sách</button>
+        </div>
+    </header>
+
+    <section id="dashboard" class="metrics-grid metrics-grid-four" aria-label="Thống kê">
+        <article class="metric-card primary-metric">
+            <span>Tổng lượt đã gửi</span>
+            <strong id="metricTotal">—</strong>
+        </article>
+        <article class="metric-card accepted-metric">
+            <span>Đồng ý</span>
+            <strong id="metricAccepted">—</strong>
+        </article>
+        <article class="metric-card declined-metric">
+            <span>Từ chối</span>
+            <strong id="metricDeclined">—</strong>
+        </article>
+        <article class="metric-card pending-metric">
+            <span>Đang chờ tablet</span>
+            <strong id="metricPending">—</strong>
+        </article>
+    </section>
+
+    <section id="passengers" class="data-card">
+        <div class="data-card-header receptionist-toolbar">
+            <div>
+                <p class="eyebrow">200 BẢN GHI GẦN NHẤT</p>
+                <h2>Chọn hành khách để hiển thị</h2>
+            </div>
+            <div class="display-action">
+                <span id="selectedSummary" class="muted">Chưa chọn hành khách</span>
+                <button id="displayButton" class="button button-primary compact" type="button" disabled>
+                    Hiển thị trên tablet
+                </button>
+            </div>
+        </div>
+
+        <div class="filter-row">
+            <input id="searchInput" type="search" placeholder="Tìm tên, chuyến bay, workstation…" aria-label="Tìm kiếm">
+            <select id="statusFilter" aria-label="Trạng thái">
+                <option value="">Tất cả trạng thái</option>
+                <option value="NotSent">Chưa hiển thị</option>
+                <option value="Pending">Đang chờ xác nhận</option>
+                <option value="Accepted">Đã đồng ý</option>
+                <option value="Declined">Đã từ chối</option>
+            </select>
+        </div>
+
+        <div id="adminMessage" class="admin-message hidden" role="status"></div>
+
+        <div id="passengerTableWrap" class="table-wrap">
+            <table class="admin-passenger-table">
+                <thead>
+                <tr>
+                    <th class="select-column">Chọn</th>
+                    <th>ID</th>
+                    <th>Hành khách</th>
+                    <th>Chuyến bay</th>
+                    <th>Ngày bay</th>
+                    <th>Workstation / Kho</th>
+                    <th>Nhân viên tạo</th>
+                    <th>Trạng thái</th>
+                    <th>Xác nhận lúc</th>
+                </tr>
+                </thead>
+                <tbody id="passengerRows"></tbody>
+            </table>
+            <div id="emptyState" class="empty-state hidden">Không có dữ liệu phù hợp.</div>
+        </div>
+
+        <footer class="pagination">
+            <span id="rowSummary">0 hành khách</span>
+            <div class="pagination-controls" aria-label="Phân trang hành khách">
+                <button id="previousPageButton" class="page-button" type="button">Trang trước</button>
+                <span id="pageSummary">Trang 1 / 1</span>
+                <button id="nextPageButton" class="page-button" type="button">Trang sau</button>
+            </div>
+        </footer>
+    </section>
+</main>
+
+<script src="/js/admin.js" defer></script>
+</body>
+</html>

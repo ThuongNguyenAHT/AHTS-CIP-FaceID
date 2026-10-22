@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex,nofollow">
+    <title>CIP · Xác nhận thông tin & Sinh trắc học</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="tablet-body">
+<main class="tablet-shell" aria-live="polite">
+    <header class="tablet-header">
+        <div class="brand-mark" aria-hidden="true">CIP</div>
+        <div>
+            <p class="eyebrow">CIP SERVICE · SMART VERIFICATION</p>
+            <h1>Xác nhận thông tin & Sinh trắc học</h1>
+        </div>
+        <div class="header-actions">
+            <!-- Camera Status Check Pill -->
+            <div id="cameraStatusPill" class="camera-status-pill is-checking" role="button" tabindex="0" title="Nhấn để kiểm tra và kích hoạt lại camera">
+                <span class="camera-status-dot"></span>
+                <span id="cameraStatusText">Camera: Đang kiểm tra...</span>
+            </div>
+            <a href="?demo=1" id="demoModeLink" class="demo-pill">🧪 Thử nghiệm Demo</a>
+            <div id="connectionStatus" class="connection-pill is-connecting">
+                <span class="status-dot"></span>
+                <span>Đang kết nối</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="waitingView" class="tablet-card waiting-card">
+        <div class="scan-illustration" aria-hidden="true">
+            <span class="scan-line"></span>
+            <span class="ticket-line ticket-line-one"></span>
+            <span class="ticket-line ticket-line-two"></span>
+            <span class="ticket-code">|||| ||| ||||</span>
+        </div>
+        <p class="eyebrow accent">SẴN SÀNG</p>
+        <h2>Vui lòng quét Boarding Pass</h2>
+        <p class="muted large-copy">Thông tin xác nhận sẽ tự động xuất hiện trên màn hình này.</p>
+        <div class="waiting-pulse" aria-label="Đang chờ dữ liệu"><i></i><i></i><i></i></div>
+    </section>
+
+    <section id="consentView" class="tablet-card consent-card hidden" aria-labelledby="consentTitle">
+        <!-- Passenger Header Banner -->
+        <div class="passenger-summary">
+            <div>
+                <p class="field-label" id="lblPassenger">HÀNH KHÁCH</p>
+                <p id="passengerName" class="passenger-name"></p>
+            </div>
+            <div class="flight-badge">
+                <span id="lblFlight">CHUYẾN BAY</span>
+                <strong id="flightCode"></strong>
+            </div>
+        </div>
+
+        <div class="tablet-grid">
+            <!-- Left Column: Camera Face Scan Viewport (Apple iOS Face ID UI) -->
+            <div class="camera-panel">
+                <div class="camera-viewport-wrapper">
+                    <div id="cameraViewport" class="camera-viewport is-standby">
+                        <!-- Live Video Stream -->
+                        <video id="cameraVideo" autoplay playsinline muted class="camera-video hidden"></video>
+                        
+                        <!-- Fallback / Simulated Avatar Stream (Apple Dark Aesthetic) -->
+                        <div id="cameraSimulation" class="camera-simulation">
+                            <div class="simulation-avatar">
+                                <svg class="avatar-svg" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <ellipse cx="70" cy="58" rx="28" ry="36" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/>
+                                    <path d="M25 140C28 110 46 98 70 98C94 98 112 110 115 140" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                                    <circle cx="58" cy="54" r="2.5" fill="currentColor"/>
+                                    <circle cx="82" cy="54" r="2.5" fill="currentColor"/>
+                                    <path d="M70 58V69H74" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M62 78C65 81 75 81 78 78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Face Recognition HUD / Apple iOS Face ID Frame Overlay -->
+                        <div class="face-overlay" aria-hidden="true">
+                            <!-- iOS Face ID 4 Corner Brackets (Apple squircle frame) -->
+                            <div class="ios-corner-frame">
+                                <div class="hud-corner top-left"></div>
+                                <div class="hud-corner top-right"></div>
+                                <div class="hud-corner bottom-left"></div>
+                                <div class="hud-corner bottom-right"></div>
+                            </div>
+
+                            <!-- iOS Face ID Guide & Radial Ticks -->
+                            <div id="iosFaceTarget" class="ios-face-target">
+                                <!-- Radial Ticks Ring (Apple enrollment ticks) -->
+                                <svg class="ios-ticks-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="ios-ticks-track" cx="100" cy="100" r="84" stroke="currentColor" stroke-width="7" stroke-dasharray="2.5 12" />
+                                    <circle id="iosTicksProgress" class="ios-ticks-active" cx="100" cy="100" r="84" stroke="#0A84FF" stroke-width="7" stroke-dasharray="2.5 12" />
+                                </svg>
+
+                                <!-- Face Oval Contour -->
+                                <div class="face-guide-oval"></div>
+
+                                <!-- 3D LiDAR Infrared Landmark Points & Geometry Mesh -->
+                                <svg class="ios-lidar-mesh" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Connecting Mesh Facets -->
+                                    <g class="mesh-facets" stroke="currentColor" stroke-width="0.8" opacity="0.35">
+                                        <line x1="80" y1="42" x2="56" y2="60" />
+                                        <line x1="80" y1="42" x2="80" y2="62" />
+                                        <line x1="80" y1="42" x2="104" y2="60" />
+                                        <line x1="56" y1="60" x2="80" y2="62" />
+                                        <line x1="80" y1="62" x2="104" y2="60" />
+                                        <line x1="56" y1="60" x2="52" y2="82" />
+                                        <line x1="56" y1="60" x2="68" y2="82" />
+                                        <line x1="104" y1="60" x2="92" y2="82" />
+                                        <line x1="104" y1="60" x2="108" y2="82" />
+                                        <line x1="68" y1="82" x2="80" y2="92" />
+                                        <line x1="92" y1="82" x2="80" y2="92" />
+                                        <line x1="52" y1="82" x2="40" y2="105" />
+                                        <line x1="108" y1="82" x2="120" y2="105" />
+                                        <line x1="80" y1="92" x2="80" y2="114" />
+                                        <line x1="80" y1="114" x2="40" y2="105" />
+                                        <line x1="80" y1="114" x2="120" y2="105" />
+                                        <line x1="80" y1="114" x2="64" y2="132" />
+                                        <line x1="80" y1="114" x2="96" y2="132" />
+                                        <line x1="64" y1="132" x2="80" y2="130" />
+                                        <line x1="96" y1="132" x2="80" y2="130" />
+                                        <line x1="64" y1="132" x2="80" y2="148" />
+                                        <line x1="96" y1="132" x2="80" y2="148" />
+                                        <line x1="40" y1="105" x2="52" y2="152" />
+                                        <line x1="120" y1="105" x2="108" y2="152" />
+                                        <line x1="52" y1="152" x2="80" y2="168" />
+                                        <line x1="108" y1="152" x2="80" y2="168" />
+                                        <line x1="80" y1="148" x2="80" y2="168" />
+                                    </g>
+                                    <!-- Landmark Nodes -->
+                                    <g class="mesh-nodes" fill="currentColor">
+                                        <circle cx="80" cy="42" r="2.2" />
+                                        <circle cx="56" cy="60" r="2" />
+                                        <circle cx="80" cy="62" r="2" />
+                                        <circle cx="104" cy="60" r="2" />
+                                        <circle cx="52" cy="82" r="2" />
+                                        <circle cx="68" cy="82" r="2" />
+                                        <circle cx="92" cy="82" r="2" />
+                                        <circle cx="108" cy="82" r="2" />
+                                        <circle cx="80" cy="92" r="2.2" />
+                                        <circle cx="80" cy="114" r="2.5" />
+                                        <circle cx="40" cy="105" r="2" />
+                                        <circle cx="120" cy="105" r="2" />
+                                        <circle cx="64" cy="132" r="2" />
+                                        <circle cx="80" cy="130" r="2.2" />
+                                        <circle cx="96" cy="132" r="2" />
+                                        <circle cx="80" cy="148" r="2.2" />
+                                        <circle cx="52" cy="152" r="2" />
+                                        <circle cx="80" cy="168" r="2.5" />
+                                        <circle cx="108" cy="152" r="2" />
+                                    </g>
+                                </svg>
+
+                                <!-- Apple Laser Scanner Beam -->
+                                <div class="laser-scanner"></div>
+                            </div>
+
+                            <!-- Authentic Apple Face ID Success Checkmark Animation -->
+                            <div class="faceid-success-overlay">
+                                <div class="faceid-success-circle">
+                                    <svg class="faceid-check-svg" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle class="check-circle" cx="44" cy="44" r="38" stroke="#30D158" stroke-width="4.5" />
+                                        <path class="check-path" d="M26 45.5L38 57.5L62 31.5" stroke="#30D158" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="faceid-ripple-ring"></div>
+                            </div>
+                        </div>
+
+                        <!-- Standby Lock Overlay (Apple iOS frosted lock screen) -->
+                        <div id="cameraLockNotice" class="camera-lock-notice">
+                            <div class="ios-faceid-badge">
+                                <svg class="ios-faceid-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- 4 Corner Brackets -->
+                                    <path d="M12 24V16C12 13.7909 13.7909 12 16 12H24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M52 24V16C52 13.7909 50.2091 12 48 12H40" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M12 40V48C12 50.2091 13.7909 52 16 52H24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M52 40V48C52 50.2091 50.2091 52 48 52H40" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                    <!-- Eyes -->
+                                    <path d="M23 25V30" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M41 25V30" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                    <!-- Nose -->
+                                    <path d="M32 24V35H36.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <!-- Smile -->
+                                    <path d="M23 41.5C26 44.5 38 44.5 41 41.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                                <span class="ios-lock-tag">🔒</span>
+                            </div>
+                            <p class="lock-eyebrow" id="lblLockEyebrow">FACE ID · SINH TRẮC HỌC</p>
+                            <p class="lock-title" id="lblLockTitle">Sẵn sàng nhận diện</p>
+                            <p class="lock-desc" id="lblLockDesc">Vui lòng tích chọn đồng ý <strong>mục (1)</strong> bên dưới để kích hoạt camera</p>
+                        </div>
+
+                        <!-- Scanning / Success Floating Status Badge (iOS Dynamic Island pill) -->
+                        <div id="scannerStatusBadge" class="scanner-status-badge hidden">
+                            <span class="scanner-status-icon">
+                                <span class="status-pulse-dot"></span>
+                            </span>
+                            <span id="scannerStatusText">Đang quét Face ID...</span>
+                        </div>
+                    </div>
+
+                    <!-- Scan Progress Bar (iOS style pill) -->
+                    <div id="scanProgressContainer" class="scan-progress-wrap hidden">
+                        <div class="progress-labels">
+                            <span id="scanProgressLabel">Thu thập dữ liệu khuôn mặt...</span>
+                            <strong id="scanProgressPercent">0%</strong>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div id="scanProgressBar" class="progress-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camera Controls / Hint & Real-time Tracking Status -->
+                <div class="camera-footer">
+                    <div class="camera-footer-row">
+                        <span class="camera-hint-icon">📷</span>
+                        <span id="cameraHintText" class="camera-hint-text">Camera sẽ tự động kích hoạt khi bạn tick đồng ý bên dưới.</span>
+                    </div>
+                    <div id="cameraStatusFooter" class="camera-status-footer">
+                        <span id="cameraDeviceLabel" class="camera-device-label">Thiết bị: Đang kiểm tra...</span>
+                        <span id="faceTrackingBadge" class="face-tracking-badge is-searching hidden">
+                            <span class="tracking-dot"></span>
+                            <span id="faceTrackingText">Chờ khuôn mặt</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: DLCN Consent & Checkboxes -->
+            <div class="consent-controls-panel">
+                <div class="policy-heading">
+                    <div>
+                        <p class="field-label" id="policyFieldLabel">XÁC NHẬN SỬ DỤNG DỮ LIỆU CÁ NHÂN (DLCN)</p>
+                        <h2 id="consentTitle"></h2>
+                    </div>
+
+                    <!-- International Language Dropdown with National Flags & Native Names -->
+                    <div class="lang-dropdown-wrapper" id="langDropdownWrapper">
+                        <button type="button" class="lang-dropdown-trigger" id="langDropdownTrigger" aria-haspopup="listbox" aria-expanded="false" title="Chọn ngôn ngữ / Select Language">
+                            <span class="lang-flag-current" id="currentLangFlag">
+                                <svg class="flag-icon" viewBox="0 0 640 480" width="22" height="16" aria-hidden="true"><rect width="640" height="480" fill="#da251d"/><polygon points="320,80 367,225 520,225 396,315 444,460 320,370 196,460 244,315 120,225 273,225" fill="#ffcd00"/></svg>
+                            </span>
+                            <span class="lang-name-current" id="currentLangName">Tiếng Việt</span>
+                            <svg class="lang-chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="4 6 8 10 12 6"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="lang-dropdown-menu hidden" id="langDropdownMenu" role="listbox" aria-label="Languages">
+                            <!-- Tiếng Việt -->
+                            <button type="button" class="lang-option is-active" data-lang="vi-VN" role="option" aria-selected="true">
+                                <span class="lang-option-flag">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" width="22" height="16" aria-hidden="true"><rect width="640" height="480" fill="#da251d"/><polygon points="320,80 367,225 520,225 396,315 444,460 320,370 196,460 244,315 120,225 273,225" fill="#ffcd00"/></svg>
+                                </span>
+                                <div class="lang-option-meta">
+                                    <span class="lang-option-name">Tiếng Việt</span>
+                                    <span class="lang-option-code">vi-VN</span>
+                                </div>
+                                <span class="lang-check">✓</span>
+                            </button>
+
+                            <!-- Tiếng Trung -->
+                            <button type="button" class="lang-option" data-lang="zh-CN" role="option" aria-selected="false">
+                                <span class="lang-option-flag">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" width="22" height="16" aria-hidden="true"><rect width="640" height="480" fill="#de2910"/><polygon points="107,48 122,95 171,95 131,124 146,171 107,142 67,171 82,124 42,95 91,95" fill="#ffde00"/><polygon points="213,32 218,48 234,48 221,57 226,73 213,64 201,73 205,57 193,48 208,48" fill="#ffde00"/><polygon points="256,75 261,91 277,91 264,100 269,116 256,107 244,116 248,100 236,91 251,91" fill="#ffde00"/><polygon points="256,139 261,155 277,155 264,164 269,180 256,171 244,180 248,164 236,155 251,155" fill="#ffde00"/><polygon points="213,181 218,197 234,197 221,206 226,222 213,213 201,222 205,206 193,197 208,197" fill="#ffde00"/></svg>
+                                </span>
+                                <div class="lang-option-meta">
+                                    <span class="lang-option-name">中文</span>
+                                    <span class="lang-option-code">zh-CN</span>
+                                </div>
+                                <span class="lang-check">✓</span>
+                            </button>
+
+                            <!-- Tiếng Hàn -->
+                            <button type="button" class="lang-option" data-lang="ko-KR" role="option" aria-selected="false">
+                                <span class="lang-option-flag">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" width="22" height="16" aria-hidden="true"><rect width="640" height="480" fill="#ffffff"/><path d="M210 240a110 110 0 0 0 220 0c0-60.75-49.25-110-110-110s-110 49.25-110 110z" fill="#0047a0"/><path d="M210 240a110 110 0 0 1 220 0c0 60.75-49.25 110-110 110s-110-49.25-110-110z" fill="#cd2e3a"/><circle cx="265" cy="240" r="55" fill="#cd2e3a"/><circle cx="375" cy="240" r="55" fill="#0047a0"/><g fill="#000000"><rect x="110" y="80" width="16" height="56" transform="rotate(-34 118 108)"/><rect x="130" y="80" width="16" height="56" transform="rotate(-34 138 108)"/><rect x="150" y="80" width="16" height="56" transform="rotate(-34 158 108)"/><rect x="474" y="80" width="16" height="56" transform="rotate(34 482 108)"/><rect x="494" y="80" width="16" height="56" transform="rotate(34 502 108)"/><rect x="514" y="80" width="16" height="56" transform="rotate(34 522 108)"/></g></svg>
+                                </span>
+                                <div class="lang-option-meta">
+                                    <span class="lang-option-name">한국어</span>
+                                    <span class="lang-option-code">ko-KR</span>
+                                </div>
+                                <span class="lang-check">✓</span>
+                            </button>
+
+                            <!-- Tiếng Anh -->
+                            <button type="button" class="lang-option" data-lang="en-US" role="option" aria-selected="false">
+                                <span class="lang-option-flag">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" width="22" height="16" aria-hidden="true"><path fill="#012169" d="M0 0h640v480H0z"/><path stroke="#fff" stroke-width="64" d="m0 0 640 480M640 0 0 480"/><path stroke="#c8102e" stroke-width="40" d="m0 0 640 480M640 0 0 480"/><path stroke="#fff" stroke-width="106" d="M320 0v480M0 240h640"/><path stroke="#c8102e" stroke-width="64" d="M320 0v480M0 240h640"/></svg>
+                                </span>
+                                <div class="lang-option-meta">
+                                    <span class="lang-option-name">English</span>
+                                    <span class="lang-option-code">en-US</span>
+                                </div>
+                                <span class="lang-check">✓</span>
+                            </button>
+
+                            <!-- Tiếng Nhật -->
+                            <button type="button" class="lang-option" data-lang="ja-JP" role="option" aria-selected="false">
+                                <span class="lang-option-flag">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" width="22" height="16" aria-hidden="true"><rect width="640" height="480" fill="#ffffff"/><circle cx="320" cy="240" r="144" fill="#bc002d"/></svg>
+                                </span>
+                                <div class="lang-option-meta">
+                                    <span class="lang-option-name">日本語</span>
+                                    <span class="lang-option-code">ja-JP</span>
+                                </div>
+                                <span class="lang-check">✓</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <span id="policyLanguage" class="hidden">vi-VN</span>
+                </div>
+
+                <!-- Policy Summary Box (Collapsible) -->
+                <div class="policy-box">
+                    <div class="policy-box-header">
+                        <span class="policy-badge" id="lblPolicyBadge">Chính sách <span id="policyVersion">v1.0</span></span>
+                        <button id="togglePolicyBtn" class="text-link" type="button">Xem nội dung đầy đủ ▼</button>
+                    </div>
+                    <div id="policyContent" class="policy-content collapsed" tabindex="0"></div>
+                </div>
+
+                <!-- Two Consent Checkboxes -->
+                <div class="consent-checkbox-group">
+                    <label class="consent-checkbox-card" for="consentFaceScan">
+                        <input type="checkbox" id="consentFaceScan" class="consent-checkbox">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                        <div class="checkbox-text">
+                            <strong id="chkFaceTitle">1. Đồng ý quét & thu thập hình ảnh khuôn mặt</strong>
+                            <p id="chkFaceDesc">Cho phép camera quét khuôn mặt (dữ liệu sinh trắc học) để phục vụ quy trình xác nhận hành khách tại quầy CIP.</p>
+                        </div>
+                    </label>
+
+                    <label class="consent-checkbox-card" for="consentDataPolicy">
+                        <input type="checkbox" id="consentDataPolicy" class="consent-checkbox">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                        <div class="checkbox-text">
+                            <strong id="chkDataTitle">2. Đồng ý xử lý Dữ liệu cá nhân (DLCN)</strong>
+                            <p id="chkDataDesc">Tôi đã đọc, hiểu rõ và đồng ý cho phép xử lý dữ liệu hành trình theo Chính sách bảo vệ dữ liệu cá nhân của CIP Service.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <p id="decisionError" class="inline-error hidden" role="alert"></p>
+
+                <!-- Decision Actions -->
+                <div class="decision-actions">
+                    <button id="declineButton" class="button button-secondary" type="button">
+                        ✕ Từ chối
+                    </button>
+                    <button id="acceptButton" class="button button-primary is-disabled" type="button" disabled>
+                        ✓ Đồng ý & Hoàn tất
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="completeView" class="tablet-card complete-card hidden">
+        <div class="complete-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow accent">HOÀN TẤT</p>
+        <h2>Lựa chọn đã được ghi nhận</h2>
+        <p class="muted large-copy">Cảm ơn quý khách đã hoàn tất thủ tục xác nhận tại quầy CIP.</p>
+    </section>
+</main>
+
+<script src="/js/tablet.js" defer></script>
+</body>
+</html>
