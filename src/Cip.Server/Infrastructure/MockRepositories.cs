@@ -111,6 +111,28 @@ public sealed class MockConsentRepository : ConsentRepository
     {
     }
 
+    public override void SaveFaceImage(int id, string? faceImageUrl)
+    {
+        base.SaveFaceImage(id, faceImageUrl);
+        lock (_records)
+        {
+            if (!_records.ContainsKey(id))
+            {
+                _records[id] = new MockDpoRecord(
+                    id,
+                    "NGUYEN VAN AN",
+                    "VN",
+                    "123",
+                    DateTime.Today,
+                    "POS-CIP-01",
+                    "Nguyễn Thị Thu",
+                    null,
+                    _policy.Content,
+                    null);
+            }
+        }
+    }
+
     public override Task<IReadOnlyDictionary<int, DpoConsentState>> GetStatesAsync(
         IReadOnlyCollection<int> sourceIds,
         CancellationToken cancellationToken)
@@ -126,7 +148,11 @@ public sealed class MockConsentRepository : ConsentRepository
                     true => "Accepted",
                     false => "Declined"
                 };
-                result[id] = new DpoConsentState(id, status, record.CreateTime);
+                result[id] = new DpoConsentState(id, status, record.CreateTime, GetFaceImage(id));
+            }
+            else if (GetFaceImage(id) is { } faceImg)
+            {
+                result[id] = new DpoConsentState(id, "Pending", null, faceImg);
             }
         }
         return Task.FromResult<IReadOnlyDictionary<int, DpoConsentState>>(result);
@@ -227,6 +253,29 @@ public sealed class MockConsentRepository : ConsentRepository
 
             var status = accept ? "Accepted" : "Declined";
             return Task.FromResult(new DecisionOutcome(true, true, status, confirmedAt));
+        }
+    }
+
+    public override Task<DecisionOutcome> CancelPendingAsync(
+        int id,
+        CancellationToken cancellationToken)
+    {
+        lock (_records)
+        {
+            if (!_records.TryGetValue(id, out var record))
+            {
+                return Task.FromResult(new DecisionOutcome(false, false, null, null));
+            }
+
+            if (record.Accept is not null)
+            {
+                var existingStatus = record.Accept == true ? "Accepted" : "Declined";
+                return Task.FromResult(new DecisionOutcome(true, false, existingStatus, record.CreateTime));
+            }
+
+            _records.TryRemove(id, out _);
+            _faceImages.TryRemove(id, out _);
+            return Task.FromResult(new DecisionOutcome(true, true, "NotSent", null));
         }
     }
 

@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Data;
 using Cip.Server.Configuration;
 using Cip.Server.Domain;
@@ -11,6 +12,18 @@ public class ConsentRepository(
     IOptions<ConsentPolicyOptions> policyOptions)
 {
     protected readonly ConsentPolicyOptions _policy = policyOptions.Value;
+    protected readonly ConcurrentDictionary<int, string> _faceImages = new();
+
+    public virtual void SaveFaceImage(int id, string? faceImageUrl)
+    {
+        if (!string.IsNullOrWhiteSpace(faceImageUrl))
+        {
+            _faceImages[id] = faceImageUrl;
+        }
+    }
+
+    public virtual string? GetFaceImage(int id) =>
+        _faceImages.TryGetValue(id, out var img) ? img : null;
 
     public virtual async Task<IReadOnlyDictionary<int, DpoConsentState>> GetStatesAsync(
         IReadOnlyCollection<int> sourceIds,
@@ -65,10 +78,12 @@ public class ConsentRepository(
         await using var reader = await command.ExecuteReaderAsync(cancellationToken);
         while (await reader.ReadAsync(cancellationToken))
         {
+            var rowId = reader.GetInt32(0);
             var state = new DpoConsentState(
-                reader.GetInt32(0),
+                rowId,
                 reader.GetString(1),
-                reader.IsDBNull(2) ? null : reader.GetDateTime(2));
+                reader.IsDBNull(2) ? null : reader.GetDateTime(2),
+                GetFaceImage(rowId));
             states[state.Id] = state;
         }
 
@@ -266,6 +281,46 @@ public class ConsentRepository(
         var applied = reader.GetBoolean(0) || storedAccept == accept;
 
         return new DecisionOutcome(true, applied, status, confirmedAt);
+    }
+
+    public virtual async Task<DecisionOutcome> CancelPendingAsync(
+        int id,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SET XACT_ABORT ON;
+            BEGIN TRANSACTION;
+
+            DECLARE @Existed bit = CASE WHEN EXISTS (SELECT 1 FROM dbo.DPO_CIP WHERE ID = @Id) THEN 1 ELSE 0 END;
+
+            DELETE FROM dbo.DPO_CIP
+            WHERE ID = @Id AND Accept IS NULL;
+
+            DECLARE @WasDeleted bit = CASE WHEN @@ROWCOUNT > 0 THEN 1 ELSE 0 END;
+
+            SELECT @Existed AS Existed, @WasDeleted AS WasDeleted;
+
+            COMMIT TRANSACTION;
+            """;
+
+        await using var connection = connectionFactory.CreateConsentConnection();
+        await connection.OpenAsync(cancellationToken);
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
+        await using var reader = await command.ExecuteReaderAsync(cancellationToken);
+        if (!await reader.ReadAsync(cancellationToken))
+        {
+            return new DecisionOutcome(false, false, null, null);
+        }
+
+        var existed = reader.GetBoolean(0);
+        var wasDeleted = reader.GetBoolean(1);
+        if (wasDeleted)
+        {
+            _faceImages.TryRemove(id, out _);
+        }
+        return new DecisionOutcome(existed || wasDeleted, wasDeleted, "NotSent", null);
     }
 
     public virtual async Task<DashboardSummary> GetDashboardAsync(CancellationToken cancellationToken)

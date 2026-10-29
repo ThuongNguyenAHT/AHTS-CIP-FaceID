@@ -229,6 +229,13 @@
                         </span>
                     </div>
                 </div>
+
+                <!-- Not Me / Back Action (Aligned with Decision Actions) -->
+                <div class="not-me-action-row">
+                    <button id="notMeButton" class="button button-secondary" type="button">
+                        ↩ Không phải tôi
+                    </button>
+                </div>
             </div>
 
             <!-- Right Column: DLCN Consent & Checkboxes -->
@@ -368,6 +375,25 @@
         <h2>Lựa chọn đã được ghi nhận</h2>
         <p class="muted large-copy">Cảm ơn quý khách đã hoàn tất thủ tục xác nhận tại quầy CIP.</p>
     </section>
+
+    <!-- Full Policy Document Popup Modal (.docx style) -->
+    <div id="policyModal" class="policy-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
+        <div class="policy-modal-dialog">
+            <header class="policy-modal-header">
+                <div class="policy-modal-header-title">
+                    <span class="policy-badge" id="policyModalBadge">Chính sách v1.0</span>
+                    <strong id="policyModalTitle">Văn bản xác nhận sự đồng ý của Khách hàng</strong>
+                </div>
+                <button type="button" id="closePolicyModalBtn" class="policy-modal-close" aria-label="Đóng">✕</button>
+            </header>
+            <div id="policyModalBody" class="policy-modal-body" tabindex="0">
+                <div id="policyDocxPage" class="policy-docx-page"></div>
+            </div>
+            <footer class="policy-modal-footer">
+                <button type="button" id="closePolicyModalFooterBtn" class="button button-primary compact">Đóng văn bản</button>
+            </footer>
+        </div>
+    </div>
 </main>
 
 <script src="/js/tablet.js" defer></script>

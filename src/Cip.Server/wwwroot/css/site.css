@@ -214,7 +214,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
     display: grid;
     grid-template-columns: minmax(320px, 1fr) minmax(380px, 1.25fr);
     gap: clamp(20px, 3vw, 32px);
-    align-items: start;
+    align-items: stretch;
 }
 
 /* =========================================================
@@ -1035,7 +1035,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
     white-space: pre-wrap;
 }
 .policy-content.collapsed {
-    max-height: 52px;
+    max-height: 98px;
     overflow: hidden;
     position: relative;
 }
@@ -1043,9 +1043,238 @@ button:disabled { cursor: not-allowed; opacity: .55; }
     content: '';
     position: absolute;
     inset: auto 0 0 0;
-    height: 32px;
+    height: 0;
     background: linear-gradient(to bottom, transparent, #f8fafc);
     pointer-events: none;
+}
+
+/* Policy Document Popup Modal (.docx style) */
+.policy-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 3vw, 28px);
+    background: rgba(11, 29, 53, 0.62);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: modalFadeIn 0.2s ease-out;
+}
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.policy-modal-dialog {
+    width: min(860px, 100%);
+    max-height: min(90vh, 920px);
+    display: flex;
+    flex-direction: column;
+    background: #eef2f6;
+    border-radius: 20px;
+    box-shadow: 0 28px 80px rgba(11, 29, 53, 0.38);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+.policy-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 22px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+}
+.policy-modal-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.policy-modal-header-title .policy-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #e2effa;
+    color: var(--navy);
+}
+.policy-modal-header-title strong {
+    font-size: 1rem;
+    color: var(--navy);
+}
+.policy-modal-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #f8fafc;
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    transition: all 0.15s ease;
+}
+.policy-modal-close:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+.policy-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: clamp(14px, 2.5vw, 28px);
+}
+.policy-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 22px;
+    background: #ffffff;
+    border-top: 1px solid var(--line);
+}
+
+/* Word (.docx) Page Aesthetic inside Modal */
+.policy-docx-page {
+    background: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.45;
+    padding: clamp(22px, 4vw, 48px) clamp(20px, 4.5vw, 56px);
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.06);
+    max-width: 780px;
+    margin: 0 auto;
+}
+.policy-docx-page p {
+    margin: 4px 0;
+    text-align: justify;
+}
+.policy-docx-page .docx-header-title {
+    text-align: center;
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1.38;
+    margin: 0 0 8px;
+}
+.policy-docx-page .docx-date {
+    text-align: right;
+    font-style: italic;
+    margin: 6px 0 12px;
+}
+.policy-docx-page .docx-guide-heading {
+    font-weight: 700;
+    font-style: italic;
+    margin: 8px 0 4px;
+}
+.policy-docx-page .docx-guide-list {
+    margin: 0 0 12px;
+    padding-left: 24px;
+    font-style: italic;
+}
+.policy-docx-page .docx-guide-list li {
+    margin: 3px 0;
+    text-align: justify;
+}
+.policy-docx-page .docx-roman-heading {
+    font-weight: 700;
+    margin: 14px 0 6px;
+    text-align: justify;
+}
+.policy-docx-page .docx-sub-heading {
+    font-weight: 700;
+    margin: 6px 0 4px;
+    padding-left: 16px;
+}
+.policy-docx-page .docx-party-details {
+    padding-left: 22px;
+    margin: 4px 0 10px;
+}
+.policy-docx-page .docx-party-details p {
+    font-weight: 700;
+    margin: 3px 0;
+}
+.policy-docx-page .docx-numbered-list {
+    margin: 4px 0 10px;
+    padding-left: 26px;
+}
+.policy-docx-page .docx-numbered-list li {
+    margin: 5px 0;
+    text-align: justify;
+}
+.policy-docx-page .docx-roman-sublist {
+    list-style: none;
+    margin: 4px 0 10px;
+    padding-left: 22px;
+}
+.policy-docx-page .docx-roman-sublist li {
+    margin: 4px 0;
+    text-align: justify;
+}
+.policy-docx-page .docx-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px;
+    white-space: normal;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+}
+.policy-docx-page .docx-table th,
+.policy-docx-page .docx-table td {
+    padding: 7px 10px;
+    vertical-align: top;
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    text-transform: none;
+    letter-spacing: normal;
+    background: transparent;
+}
+.policy-docx-page .docx-table-info th,
+.policy-docx-page .docx-table-info td {
+    border: 1px solid #b4c6e7;
+}
+.policy-docx-page .docx-table-info td:first-child {
+    width: 38%;
+    font-weight: 700;
+}
+.policy-docx-page .docx-table-purpose th,
+.policy-docx-page .docx-table-purpose td {
+    border: 1px solid #bdd6ee;
+}
+.policy-docx-page .docx-table-purpose th {
+    font-weight: 700;
+    text-align: center;
+}
+.policy-docx-page .docx-table-purpose td:nth-child(1) {
+    width: 10%;
+    text-align: center;
+    vertical-align: middle;
+}
+.policy-docx-page .docx-table-purpose td:nth-child(2) {
+    width: 63%;
+    text-align: justify;
+}
+.policy-docx-page .docx-table-purpose td:nth-child(3) {
+    width: 27%;
+    vertical-align: middle;
+}
+.policy-docx-page .docx-table-sign {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 28px;
+    white-space: normal;
+}
+.policy-docx-page .docx-table-sign td {
+    border: none;
+    padding: 6px 10px 42px;
+    width: 50%;
+    text-align: center;
+    font-size: 12pt;
+}
+.policy-docx-page .docx-note {
+    font-style: italic;
+    margin-top: 12px;
 }
 
 /* Checkbox Cards */
@@ -1123,11 +1352,28 @@ button:disabled { cursor: not-allowed; opacity: .55; }
     color: var(--muted);
 }
 
+.not-me-action-row {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 6px;
+}
+.not-me-action-row .button {
+    min-height: 58px;
+    padding: 0 1.4rem;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 .decision-actions {
     display: grid;
     grid-template-columns: 1fr 1.6fr;
     gap: 14px;
-    margin-top: 6px;
+    margin-top: auto;
+    padding-top: 6px;
 }
 .decision-actions .button {
     min-height: 58px;
@@ -1142,6 +1388,25 @@ button:disabled { cursor: not-allowed; opacity: .55; }
     cursor: not-allowed;
     background: #94a3b8;
     box-shadow: none;
+}
+.button-primary.is-loading {
+    opacity: .92 !important;
+    cursor: wait !important;
+    background: var(--navy) !important;
+    pointer-events: none;
+}
+.btn-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    animation: btnSpin 0.7s linear infinite;
+}
+@keyframes btnSpin {
+    to { transform: rotate(360deg); }
 }
 .button-primary:not(:disabled) {
     animation: readyPulse 2s infinite ease-in-out;
@@ -1232,14 +1497,20 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .table-wrap { max-width: 100%; overflow-x: visible; }
 .admin-passenger-table { table-layout: fixed; white-space: normal; }
 .admin-passenger-table th:nth-child(1) { width: 4%; }
-.admin-passenger-table th:nth-child(2) { width: 7%; }
-.admin-passenger-table th:nth-child(3) { width: 15%; }
-.admin-passenger-table th:nth-child(4) { width: 11%; }
-.admin-passenger-table th:nth-child(5) { width: 12%; }
-.admin-passenger-table th:nth-child(6) { width: 19%; }
-.admin-passenger-table th:nth-child(7) { width: 14%; }
+.admin-passenger-table th:nth-child(2) { width: 6%; }
+.admin-passenger-table th:nth-child(3) { width: 14%; }
+.admin-passenger-table th:nth-child(4) { width: 10%; }
+.admin-passenger-table th:nth-child(5) { width: 10%; }
+.admin-passenger-table th:nth-child(6) { width: 16%; }
+.admin-passenger-table th:nth-child(7) { width: 12%; }
 .admin-passenger-table th:nth-child(8) { width: 9%; }
 .admin-passenger-table th:nth-child(9) { width: 9%; }
+.admin-passenger-table th:nth-child(10) { width: 10%; }
+.biometric-cell { vertical-align: middle; }
+.biometric-thumb-wrap { display: inline-flex; align-items: center; gap: 8px; }
+.biometric-thumb { width: 48px; height: 36px; object-fit: cover; border-radius: 7px; border: 1.5px solid #10b981; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12); cursor: zoom-in; background: #0a1628; transition: transform 0.15s ease; }
+.biometric-thumb:hover { transform: scale(1.08); }
+.biometric-tag { display: inline-block; font-size: .68rem; font-weight: 800; color: var(--green); }
 table { width: 100%; border-collapse: collapse; white-space: nowrap; }
 th, td { padding: 13px 12px; border-bottom: 1px solid #edf0f3; text-align: left; font-size: .8rem; }
 th { color: var(--muted); background: #fafbfc; font-size: .69rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -1390,7 +1661,7 @@ tbody tr:hover { background: #fbfcfd; }
     }
 
     .policy-content.collapsed {
-        max-height: 46px;
+        max-height: 92px;
     }
 
     .consent-checkbox-card {
@@ -1412,6 +1683,11 @@ tbody tr:hover { background: #fbfcfd; }
         margin-top: clamp(2px, 1vh, 8px);
     }
 
+    .not-me-action-row {
+        justify-content: center;
+    }
+
+    .not-me-action-row .button,
     .decision-actions .button {
         min-height: clamp(46px, 5.5vh, 52px);
         font-size: 0.95rem;
@@ -1474,7 +1750,7 @@ tbody tr:hover { background: #fbfcfd; }
         max-height: 120px;
     }
     .policy-content.collapsed {
-        max-height: 46px;
+        max-height: 92px;
     }
     .consent-checkbox-group {
         gap: 10px;
@@ -1489,10 +1765,16 @@ tbody tr:hover { background: #fbfcfd; }
     .checkbox-text p {
         font-size: 0.77rem;
     }
+    .not-me-action-row {
+        margin-top: auto;
+        padding-top: 2px;
+    }
     .decision-actions {
-        margin-top: 2px;
+        margin-top: auto;
+        padding-top: 2px;
         gap: 10px;
     }
+    .not-me-action-row .button,
     .decision-actions .button {
         min-height: 50px;
         font-size: 0.96rem;

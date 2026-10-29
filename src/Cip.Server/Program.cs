@@ -120,6 +120,15 @@ app.MapGet("/api/tablet/current", async (
     return current is null ? Results.NoContent() : Results.Ok(current);
 });
 
+app.MapPost("/api/tablet/requests/{id:int}/biometric", (
+    int id,
+    BiometricUploadRequest request,
+    ConsentRepository repository) =>
+{
+    repository.SaveFaceImage(id, request.FaceImage);
+    return Results.Ok(new { status = "Saved", id });
+});
+
 app.MapPost("/api/tablet/requests/{id:int}/decision", async (
     int id,
     DecisionRequest request,
@@ -127,15 +136,22 @@ app.MapPost("/api/tablet/requests/{id:int}/decision", async (
     CancellationToken cancellationToken) =>
 {
     var decision = request.Decision?.Trim();
-    if (decision is not ("Accepted" or "Declined"))
+    if (decision is not ("Accepted" or "Declined" or "NotMe"))
     {
         return Results.ValidationProblem(new Dictionary<string, string[]>
         {
-            [nameof(request.Decision)] = ["Decision phải là Accepted hoặc Declined."]
+            [nameof(request.Decision)] = ["Decision phải là Accepted, Declined hoặc NotMe."]
         });
     }
 
-    var outcome = await repository.SaveDecisionAsync(id, decision == "Accepted", cancellationToken);
+    if (decision == "Accepted" && !string.IsNullOrWhiteSpace(request.FaceImage))
+    {
+        repository.SaveFaceImage(id, request.FaceImage);
+    }
+
+    var outcome = decision == "NotMe"
+        ? await repository.CancelPendingAsync(id, cancellationToken)
+        : await repository.SaveDecisionAsync(id, decision == "Accepted", cancellationToken);
     if (!outcome.Found)
     {
         return Results.NotFound();
@@ -236,7 +252,8 @@ app.MapGet("/api/admin/source-passengers", async (
             passenger.UserName,
             passenger.FullName,
             state?.Status ?? "NotSent",
-            state?.ConfirmedAt);
+            state?.ConfirmedAt,
+            state?.FaceImageUrl ?? consentRepository.GetFaceImage(passenger.Id));
     });
 
     return Results.Ok(result);
@@ -324,7 +341,9 @@ app.MapHub<TabletHub>("/hubs/tablet");
 
 app.Run();
 
-public sealed record DecisionRequest(string? Decision);
+public sealed record DecisionRequest(string? Decision, string? FaceImage = null);
+
+public sealed record BiometricUploadRequest(string? FaceImage, string? PassengerName = null, string? FlightCode = null);
 
 public sealed record LoginRequest(string? Username, string? Password);
 

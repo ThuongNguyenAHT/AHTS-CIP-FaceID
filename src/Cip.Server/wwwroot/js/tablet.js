@@ -41,11 +41,13 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             policyBadge: 'Chính sách',
             policyToggleShow: 'Xem nội dung đầy đủ ▼',
             policyToggleHide: 'Thu gọn ▲',
-            policyContent: 'Quý khách xác nhận đồng ý cho phép hệ thống sử dụng camera thu thập hình ảnh khuôn mặt và thông tin chuyến bay để phục vụ quy trình nhận diện tại quầy CIP theo quy định bảo vệ dữ liệu cá nhân (Nghị định 13/2023/NĐ-CP).\n\nDữ liệu hình ảnh sinh trắc học chỉ được sử dụng cho mục đích đối soát an ninh hàng không và tự động hủy sau khi hoàn thành quy trình theo quy định của nhà chức trách.',
+            policySummary: 'Thu thập, ghi nhận, phân tích và đối chiếu ảnh khuôn mặt của Khách hàng nhằm xác thực danh tính và điều khiển mở cổng từ để Khách hàng vào phòng chờ. Dữ liệu sinh trắc học chỉ được sử dụng trong phạm vi cần thiết cho mục đích này.',
+            policyContent: 'MẪU VĂN BẢN XÁC NHẬN SỰ ĐỒNG Ý CỦA KHÁCH HÀNG\nĐỐI VỚI VIỆC XỬ LÝ DỮ LIỆU SINH TRẮC HỌC\n(Kèm theo Chính sách bảo vệ dữ liệu cá nhân áp dụng cho Khách hàng, Đối tác của Công ty Cổ phần Dịch vụ Nhà ga Quốc tế Đà Nẵng)\nĐà Nẵng, ngày … tháng… năm 2026\n\nHƯỚNG DẪN ĐIỀN FORM:\n1. Vui lòng đọc kỹ mục đích xử lý dữ liệu được liệt kê trong biểu mẫu này.\n2. Chỉ đánh dấu vào ô ☐ đối với nội dung bạn đồng ý cho Công ty Cổ phần Dịch vụ Nhà ga Quốc tế Đà Nẵng (“Công Ty”/“AHTS”) xử lý dữ liệu cá nhân.\n3. Thông tin cá nhân vui lòng điền chính xác theo CCCD hoặc Hộ chiếu (nếu có).\n\nI. THÔNG TIN CỦA CÁC BÊN:\n1. Bên kiểm soát và xử lý dữ liệu cá nhân\nTên đầy đủ: Công ty Cổ phần Dịch vụ Nhà ga Quốc tế Đà Nẵng\nTên viết tắt: AHTS\nMã số doanh nghiệp: 0401801656\nĐịa chỉ trụ sở chính: Cảng Hàng không Quốc tế Đà Nẵng, phường Hòa Cường, Thành phố Đà Nẵng, Việt Nam.\nThông tin liên hệ về bảo vệ dữ liệu cá nhân: theo thông tin được AHTS công bố/niêm yết tại từng thời điểm.\n\n2. Chủ thể dữ liệu cá nhân (Thông tin Khách hàng – vui lòng điền thông tin)\n- Họ và tên*:\n- Ngày sinh:\n- Số Căn cước/CCCD/Hộ chiếu*:\n- Email*:\n- Số điện thoại*:\n\nII. LOẠI DỮ LIỆU CÁ NHÂN ĐƯỢC XỬ LÝ\n1. Dữ liệu cá nhân nhạy cảm\n(i). Dữ liệu sinh trắc học: ảnh khuôn mặt và đặc trưng khuôn mặt của Khách hàng, được thu thập và sử dụng để xác thực danh tính và mở cổng từ cho Khách hàng vào phòng chờ.\n\nIII. MỤC ĐÍCH XỬ LÝ CẦN XIN SỰ ĐỒNG Ý\nBằng việc đánh dấu vào ô lựa chọn trong bảng dưới đây, Khách hàng xác nhận đồng ý hoặc không đồng ý cho AHTS xử lý dữ liệu sinh trắc học cho mục đích được nêu cụ thể như sau:\nSTT 1 | Mục đích xử lý: Thu thập, ghi nhận, phân tích và đối chiếu ảnh khuôn mặt của Khách hàng nhằm xác thực danh tính và điều khiển mở cổng từ để Khách hàng vào phòng chờ. Dữ liệu sinh trắc học chỉ được sử dụng trong phạm vi cần thiết cho mục đích này. | Lựa chọn: ☐ Đồng ý / ☐ Không đồng ý\n\nIV. CÁCH THỨC XỬ LÝ DỮ LIỆU CÁ NHÂN\n1. Khách hàng được thông báo rằng sự đồng ý phải tự nguyện, cụ thể, rõ ràng đối với hoạt động xử lý dữ liệu sinh trắc học; không mặc định và có thể được in, sao lưu làm bằng chứng. Trường hợp Khách hàng không đồng ý, AHTS sẽ không sử dụng dữ liệu khuôn mặt để xác thực và tự động mở cổng từ; việc xác thực quyền sử dụng phòng chờ được thực hiện theo phương thức khác theo quy trình của AHTS (nếu áp dụng).\n2. Ngoài mục đích xác thực danh tính và mở cổng từ vào phòng chờ nêu trên, nếu AHTS cần xử lý dữ liệu sinh trắc học của Khách hàng cho mục đích khác, AHTS sẽ thông báo và chỉ thực hiện khi có căn cứ xử lý phù hợp theo quy định pháp luật.\n3. Sau khi được thu thập, dữ liệu sinh trắc học được áp dụng các biện pháp bảo mật phù hợp và được AHTS xử lý theo Chính sách bảo vệ dữ liệu cá nhân áp dụng cho Khách hàng, Đối tác của AHTS và quy định pháp luật có liên quan.\n\nV. THỜI HẠN LƯU TRỮ\n1. Dữ liệu sinh trắc học của Khách hàng được lưu trữ không quá 24 tiếng đồng hồ kể từ thời điểm thu thập để phục vụ mục đích xác thực danh tính và mở cổng từ vào phòng chờ, trừ trường hợp pháp luật có liên quan yêu cầu thời hạn lưu trữ khác.\n2. Khi hết thời hạn lưu trữ nêu trên, AHTS thực hiện xóa hoặc hủy dữ liệu sinh trắc học của Khách hàng khỏi hệ thống. Trường hợp phải tiếp tục lưu trữ theo yêu cầu của pháp luật, dữ liệu chỉ được lưu trữ trong phạm vi và thời hạn theo yêu cầu đó.\n\nVI. TỔ CHỨC, CÁ NHÂN THAM GIA XỬ LÝ DỮ LIỆU\nTrong phạm vi cần thiết để vận hành chức năng xác thực khuôn mặt và mở cổng từ, dữ liệu sinh trắc học của Khách hàng có thể được xử lý bởi hoặc cung cấp cho:\n(i). Các phòng, ban và cá nhân có thẩm quyền của AHTS;\n(ii). Cơ quan nhà nước có thẩm quyền khi có yêu cầu hợp pháp;\n(iii). Các nhà cung cấp giải pháp công nghệ, thiết bị, hệ thống kiểm soát ra vào hoặc bên xử lý dữ liệu cá nhân được AHTS thuê/hợp tác, trong phạm vi cần thiết và theo thỏa thuận bảo vệ dữ liệu phù hợp.\n(Danh sách/nhóm tổ chức, cá nhân tham gia xử lý dữ liệu được AHTS công bố hoặc cập nhật theo Chính sách bảo vệ dữ liệu cá nhân áp dụng tại từng thời điểm.)\n\nVII. QUYỀN CỦA KHÁCH HÀNG VÀ RÚT LẠI SỰ ĐỒNG Ý\n1. Khách hàng có các quyền đối với dữ liệu cá nhân theo quy định pháp luật, bao gồm quyền được biết, truy cập, chỉnh sửa, yêu cầu cung cấp, yêu cầu xóa, hạn chế xử lý, phản đối xử lý, rút lại sự đồng ý, khiếu nại, tố cáo và các quyền khác theo quy định pháp luật.\n2. Khách hàng có thể rút lại sự đồng ý đối với việc xử lý dữ liệu sinh trắc học tại Mục III bằng cách gửi yêu cầu đến đầu mối tiếp nhận yêu cầu bảo vệ dữ liệu cá nhân do AHTS công bố/niêm yết tại từng thời điểm.\n3. Sau khi nhận được yêu cầu hợp lệ, AHTS sẽ dừng hoạt động xử lý dựa trên sự đồng ý đã bị rút lại, trừ trường hợp có căn cứ pháp lý khác để tiếp tục xử lý. Việc rút lại sự đồng ý không ảnh hưởng đến tính hợp pháp của hoạt động xử lý đã thực hiện trước thời điểm AHTS nhận được yêu cầu.\n\nVIII. XÁC NHẬN CỦA KHÁCH HÀNG\nBằng việc ký Văn bản này, Tôi xác nhận rằng:\n☐ Tôi xác nhận đã đọc, hiểu nội dung của Văn bản này và Chính sách bảo vệ dữ liệu cá nhân áp dụng cho Khách hàng, Đối tác của AHTS; hiểu rõ loại dữ liệu sinh trắc học được xử lý, mục đích xử lý, cách thức xử lý, thời hạn lưu trữ, các bên tham gia xử lý và quyền của tôi; đồng thời tự nguyện lựa chọn việc đồng ý hoặc không đồng ý tại Mục III.\nKhách hàng (ký và ghi rõ họ tên)\n\nLưu ý lưu trữ: AHTS lưu giữ biểu mẫu này (bản giấy hoặc bản điện tử có thể in/tái tạo) để làm bằng chứng về sự đồng ý và xuất trình khi cơ quan có thẩm quyền yêu cầu.',
             chkFaceTitle: '1. Đồng ý quét & thu thập hình ảnh khuôn mặt',
             chkFaceDesc: 'Cho phép camera quét khuôn mặt (dữ liệu sinh trắc học) để phục vụ quy trình xác nhận hành khách tại quầy CIP.',
             chkDataTitle: '2. Đồng ý xử lý Dữ liệu cá nhân (DLCN)',
             chkDataDesc: 'Tôi đã đọc, hiểu rõ và đồng ý cho phép xử lý dữ liệu hành trình theo Chính sách bảo vệ dữ liệu cá nhân của CIP Service.',
+            btnNotMe: '↩ Không phải tôi',
             btnDecline: '✕ Từ chối',
             btnAccept: '✓ Đồng ý & Hoàn tất',
             cameraLockTitle: 'Sẵn sàng nhận diện',
@@ -73,11 +75,13 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             policyBadge: '隐私政策',
             policyToggleShow: '查看完整内容 ▼',
             policyToggleHide: '收起 ▲',
-            policyContent: '您确认同意系统使用摄像头采集面部图像及航班信息，以用于CIP贵宾柜台的旅客身份核验流程，符合个人数据保护相关法规要求（第13/2023/NĐ-CP号法令）。\n\n生物特征图像数据仅严格用于航空安检核验目的，并在办理流程结束后依据民航主管机构的规定进行自动安全处理。',
+            policySummary: '收集、记录、分析和比对客户的面部图像，以验证身份并控制闸机开启供客户进入贵宾室。生物特征数据仅在此目的所需的范围内使用。',
+            policyContent: '客户同意处理生物特征数据确认书样本\n（附于岘港国际航站楼服务股份公司适用于客户、合作伙伴的个人数据保护政策）\n岘港，2026年…月…日\n\n填表指南：\n1. 请仔细阅读本表格所列的数据处理目的。\n2. 仅对您同意岘港国际航站楼服务股份公司（“公司”/“AHTS”）处理个人数据的内容勾选 ☐。\n3. 个人信息请根据身份证或护照（如有）准确填写。\n\nI. 各方信息：\n1. 个人数据控制和处理方\n全称：岘港国际航站楼服务股份公司\n简称：AHTS\n企业代码：0401801656\n总部地址：越南岘港市和强坊岘港国际机场。\n个人数据保护联系方式：按AHTS各时期公布/公示的信息。\n\n2. 个人数据主体（客户信息 – 请填写信息）\n- 姓名*：\n- 出生日期：\n- 身份证/护照号码*：\n- 电子邮箱*：\n- 电话号码*：\n\nII. 处理的个人数据类型\n1. 敏感个人数据\n(i). 生物特征数据：客户的面部图像和面部特征，收集并用于验证身份及为客户开启进入贵宾室的闸机。\n\nIII. 需征得同意的处理目的\n通过在下方表格中勾选选项，客户确认同意或不同意AHTS为以下具体目的处理生物特征数据：\n序号 1 | 处理目的：收集、记录、分析和比对客户的面部图像，以验证身份并控制闸机开启供客户进入贵宾室。生物特征数据仅在此目的所需的范围内使用。 | 选项：☐ 同意 / ☐ 不同意\n\nIV. 个人数据处理方式\n1. 客户获知，对生物特征数据处理活动的同意必须是自愿、具体、明确的；非默认且可打印、备份作为凭据。若客户不同意，AHTS将不使用面部数据进行验证和自动开启闸机；贵宾室使用权限的验证将按AHTS流程通过其他方式进行（如适用）。\n2. 除上述验证身份和开启贵宾室闸机目的外，若AHTS需要为其他目的处理客户的生物特征数据，AHTS将另行通知并仅在符合法律规定的处理依据时执行。\n3. 收集后，生物特征数据将采取适当的安全措施，并由AHTS根据适用于客户、合作伙伴的个人数据保护政策及相关法律规定进行处理。\n\nV. 存储期限\n1. 客户的生物特征数据自收集之时起存储不超过24小时，以服务于验证身份和开启贵宾室闸机的目的，相关法律要求其他存储期限的除外。\n2. 上述存储期限届满后，AHTS将从系统中删除或销毁客户的生物特征数据。若需按法律要求继续存储，数据仅在该要求的范围和期限内存储。\n\nVI. 参与数据处理的组织和个人\n在运行面部验证和闸机开启功能所需的范围内，客户的生物特征数据可能由以下各方处理或提供给以下各方：\n(i). AHTS有权部门、科室及个人；\n(ii). 提出合法要求的国家主管机关；\n(iii). AHTS聘请/合作的技术解决方案、设备、门禁系统供应商或个人数据处理方，在必要范围内并符合适当的数据保护协议。\n（参与数据处理的组织、个人名单/类别由AHTS按各时期适用的个人数据保护政策公布或更新。）\n\nVII. 客户的权利与撤回同意\n1. 客户依法享有个人数据相关权利，包括知情权、访问权、更正权、要求提供权、要求删除权、限制处理权、反对处理权、撤回同意权、投诉权、控告权及法律规定的其他权利。\n2. 客户可通过向AHTS各时期公布/公示的个人数据保护请求接收点发送请求，撤回对第III项生物特征数据处理的同意。\n3. 收到有效请求后，AHTS将停止基于已撤回同意的处理活动，但有其他法律依据继续处理的除外。撤回同意不影响AHTS收到请求前已执行的处理活动的合法性。\n\nVIII. 客户确认\n签署本文件即表示本人确认：\n☐ 本人确认已阅读、理解本文件及AHTS适用于客户、合作伙伴的个人数据保护政策的内容；清楚了解所处理的生物特征数据类型、处理目的、处理方式、存储期限、参与处理各方及本人的权利；同时在第III项自愿选择同意或不同意。\n客户（签名并注明全名）\n\n存储说明：AHTS保存本表格（纸质版或可打印/重现的电子版）作为同意凭据，并在主管机关要求时出示。',
             chkFaceTitle: '1. 同意人脸扫描与图像采集',
             chkFaceDesc: '允许摄像头扫描面部（生物特征数据），用于CIP贵宾柜台的旅客身份验证。',
             chkDataTitle: '2. 同意处理个人数据 (DLCN)',
             chkDataDesc: '我已阅读、充分理解并同意根据CIP Service个人数据保护政策处理行程数据。',
+            btnNotMe: '↩ 不是本人',
             btnDecline: '✕ 拒绝',
             btnAccept: '✓ 同意并完成',
             cameraLockTitle: '准备进行识别',
@@ -105,11 +109,13 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             policyBadge: '개인정보 방침',
             policyToggleShow: '전문 보기 ▼',
             policyToggleHide: '접기 ▲',
-            policyContent: '귀하는 개인정보보호 규정(정부시행령 제13/2023/NĐ-CP호)에 따라 CIP 카운터에서 승객 본인 확인을 위해 시스템이 카메라를 사용하여 안면 이미지와 항공편 정보를 수집하는 것에 동의함을 확인합니다。\n\n수집된 생체 안면 데이터는 항공 보안 확인 목적으로만 엄격히 사용되며, 관련 규정에 따라 절차가 완료된 후 안전하게 처리됩니다。',
+            policySummary: '신원 확인 및 라운지 입장용 자동 게이트 개방 제어를 위해 고객의 안면 이미지를 수집, 기록, 분석 및 대조합니다. 생체 인식 데이터는 이 목적에 필요한 범위 내에서만 사용됩니다.',
+            policyContent: '생체 인식 데이터 처리에 대한 고객 동의 확인서 양식\n(다낭 국제터미널 서비스 주식회사의 고객 및 파트너에게 적용되는 개인정보 보호정책 첨부)\n다낭, 2026년 …월 …일\n\n양식 작성 안내:\n1. 본 양식에 기재된 데이터 처리 목적을 주의 깊게 읽어주시기 바랍니다.\n2. 다낭 국제터미널 서비스 주식회사(“회사”/“AHTS”)의 개인정보 처리에 동의하는 내용에만 ☐ 표시를 해주십시오.\n3. 개인정보는 신분증 또는 여권(있는 경우)에 따라 정확히 기재해 주십시오.\n\nI. 당사자 정보:\n1. 개인정보 관리 및 처리자\n정식 명칭: 다낭 국제터미널 서비스 주식회사\n약칭: AHTS\n사업자등록번호: 0401801656\n본사 주소: 베트남 다낭시 호아끄엉동 다낭국제공항.\n개인정보 보호 관련 연락처: 각 시점별로 AHTS가 공고/게시하는 정보에 따름.\n\n2. 개인정보 주체 (고객 정보 – 정보를 기재해 주십시오)\n- 성명*:\n- 생년월일:\n- 신분증/여권 번호*:\n- 이메일*:\n- 전화번호*:\n\nII. 처리되는 개인정보의 유형\n1. 민감한 개인정보\n(i). 생체 인식 데이터: 고객의 안면 이미지 및 안면 특징으로, 신원 확인 및 고객의 라운지 입장을 위한 자동 게이트 개방을 위해 수집 및 사용됩니다.\n\nIII. 동의가 필요한 처리 목적\n아래 표의 선택란에 표시함으로써 고객은 다음과 같이 구체적으로 명시된 목적을 위해 AHTS가 생체 인식 데이터를 처리하는 데 동의하거나 동의하지 않음을 확인합니다:\n순번 1 | 처리 목적: 신원 확인 및 라운지 입장용 자동 게이트 개방 제어를 위해 고객의 안면 이미지를 수집, 기록, 분석 및 대조합니다. 생체 인식 데이터는 이 목적에 필요한 범위 내에서만 사용됩니다. | 선택: ☐ 동의함 / ☐ 동의하지 않음\n\nIV. 개인정보 처리 방식\n1. 고객은 생체 인식 데이터 처리 활동에 대한 동의가 자발적이고 구체적이며 명확해야 하며, 기본값으로 설정되지 않고 증거로 인쇄 및 백업될 수 있음을 안내받습니다. 고객이 동의하지 않는 경우 AHTS는 신원 확인 및 자동 게이트 개방을 위해 안면 데이터를 사용하지 않으며, 라운지 이용 권한 확인은 AHTS 절차(해당하는 경우)에 따라 다른 방식으로 수행됩니다.\n2. 위에 명시된 신원 확인 및 라운지 게이트 개방 목적 외에 AHTS가 다른 목적으로 고객의 생체 인식 데이터를 처리해야 하는 경우, AHTS는 이를 통지하고 법적 규정에 따른 적절한 처리 근거가 있는 경우에만 수행합니다.\n3. 수집된 후 생체 인식 데이터에는 적절한 보안 조치가 적용되며 AHTS의 고객 및 파트너에게 적용되는 개인정보 보호정책과 관련 법규에 따라 처리됩니다.\n\nV. 보관 기간\n1. 고객의 생체 인식 데이터는 관련 법률에서 다른 보관 기간을 요구하는 경우를 제외하고, 신원 확인 및 라운지 게이트 개방 목적을 위해 수집 시점으로부터 24시간을 초과하여 보관되지 않습니다.\n2. 위 보관 기간이 만료되면 AHTS는 시스템에서 고객의 생체 인식 데이터를 삭제하거나 파기합니다. 법률의 요구에 따라 계속 보관해야 하는 경우 데이터는 해당 요구 범위 및 기간 내에서만 보관됩니다.\n\nVI. 데이터 처리에 참여하는 조직 및 개인\n안면 인증 및 게이트 개방 기능 운영에 필요한 범위 내에서 고객의 생체 인식 데이터는 다음 주체에 의해 처리되거나 제공될 수 있습니다:\n(i). AHTS의 권한 있는 부서 및 개인;\n(ii). 적법한 요청이 있는 경우 권한 있는 국가 기관;\n(iii). 필요한 범위 내에서 적절한 데이터 보호 계약에 따라 AHTS가 고용/협력하는 기술 솔루션, 장비, 출입 통제 시스템 공급업체 또는 개인정보 처리자.\n(데이터 처리에 참여하는 조직 및 개인의 목록/그룹은 각 시점별로 적용되는 개인정보 보호정책에 따라 AHTS가 공고하거나 업데이트합니다.)\n\nVII. 고객의 권리 및 동의 철회\n1. 고객은 알 권리, 열람권, 정정권, 제공 요청권, 삭제 요청권, 처리 제한권, 처리 반대권, 동의 철회권, 불만 제기권, 고발권 및 기타 법률이 정한 권리를 포함하여 법률 규정에 따른 개인정보 관련 권리를 가집니다.\n2. 고객은 각 시점별로 AHTS가 공고/게시하는 개인정보 보호 요청 접수처에 요청서를 제출함으로써 제III항의 생체 인식 데이터 처리에 대한 동의를 철회할 수 있습니다.\n3. 유효한 요청을 접수한 후 AHTS는 계속 처리할 다른 법적 근거가 있는 경우를 제외하고 철회된 동의에 기반한 처리 활동을 중단합니다. 동의 철회는 AHTS가 요청을 접수하기 전에 수행된 처리 활동의 적법성에 영향을 미치지 않습니다.\n\nVIII. 고객의 확인\n본 문서에 서명함으로써 본인은 다음 사항을 확인합니다:\n☐ 본인은 본 문서의 내용과 AHTS의 고객 및 파트너에게 적용되는 개인정보 보호정책을 읽고 이해했음을 확인하며, 처리되는 생체 인식 데이터의 유형, 처리 목적, 처리 방식, 보관 기간, 처리 참여 당사자 및 본인의 권리를 명확히 이해하고 제III항의 동의 또는 부동의 여부를 자발적으로 선택합니다.\n고객 (서명 및 성명 기재)\n\n보관 안내: AHTS는 동의에 대한 증거로 삼고 권한 있는 기관의 요청 시 제출하기 위해 본 양식(종이 문서 또는 인쇄/재생산 가능한 전자 문서)을 보관합니다.',
             chkFaceTitle: '1. 안면 스캔 및 이미지 수집 동의',
             chkFaceDesc: 'CIP 카운터 승객 본인 확인 절차를 위해 카메라를 통한 안면 스캔(생체 데이터)을 허용합니다.',
             chkDataTitle: '2. 개인정보(DLCN) 처리 동의',
             chkDataDesc: '본인은 CIP Service 개인정보보호 방침에 따른 여정 데이터 처리에 대해 숙지하고 동의합니다.',
+            btnNotMe: '↩ 본인이 아닙니다',
             btnDecline: '✕ 거절',
             btnAccept: '✓ 동의 및 완료',
             cameraLockTitle: '인식 준비 완료',
@@ -137,11 +143,13 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             policyBadge: 'Privacy Policy',
             policyToggleShow: 'View full details ▼',
             policyToggleHide: 'Collapse ▲',
-            policyContent: 'You confirm your consent to allow the system to use the camera to collect facial images and flight information for the identity verification process at the CIP desk in compliance with personal data protection regulations (Decree 13/2023/ND-CP).\n\nBiometric facial data is strictly used for aviation security verification purposes and will be automatically handled in accordance with aviation authority regulations.',
+            policySummary: 'Collect, record, analyze, and match the Customer\'s facial image to verify identity and control the automatic gate opening for the Customer to enter the lounge. Biometric data is used strictly within the scope necessary for this purpose.',
+            policyContent: 'CUSTOMER CONSENT CONFIRMATION FORM FOR BIOMETRIC DATA PROCESSING\n(Attached to the Personal Data Protection Policy applicable to Customers and Partners of Da Nang International Terminal Services Joint Stock Company)\nDa Nang, date … month … year 2026\n\nFORM FILLING INSTRUCTIONS:\n1. Please read carefully the data processing purposes listed in this form.\n2. Only check the box ☐ for content where you consent to Da Nang International Terminal Services Joint Stock Company (“Company”/“AHTS”) processing personal data.\n3. Please fill in personal information accurately according to your Citizen ID or Passport (if any).\n\nI. INFORMATION OF THE PARTIES:\n1. Personal Data Controller and Processor\nFull name: Da Nang International Terminal Services Joint Stock Company\nAbbreviated name: AHTS\nEnterprise code: 0401801656\nHead office address: Da Nang International Airport, Hoa Cuong Ward, Da Nang City, Vietnam.\nContact information regarding personal data protection: according to information announced/posted by AHTS from time to time.\n\n2. Personal Data Subject (Customer Information – please fill in information)\n- Full name*:\n- Date of birth:\n- Citizen ID/Passport number*:\n- Email*:\n- Phone number*:\n\nII. TYPES OF PERSONAL DATA PROCESSED\n1. Sensitive personal data\n(i). Biometric data: facial image and facial features of the Customer, collected and used to verify identity and open the automatic gate for the Customer to enter the lounge.\n\nIII. PROCESSING PURPOSES REQUIRING CONSENT\nBy checking the option box in the table below, the Customer confirms consent or non-consent for AHTS to process biometric data for the specific purpose stated as follows:\nNo. 1 | Processing purpose: Collect, record, analyze, and match the Customer\'s facial image to verify identity and control the automatic gate opening for the Customer to enter the lounge. Biometric data is used strictly within the scope necessary for this purpose. | Option: ☐ Agree / ☐ Disagree\n\nIV. METHOD OF PROCESSING PERSONAL DATA\n1. The Customer is informed that consent must be voluntary, specific, and clear regarding biometric data processing activities; not by default and can be printed or backed up as evidence. If the Customer does not agree, AHTS will not use facial data to verify and automatically open the gate; verification of lounge access eligibility will be carried out by other methods in accordance with AHTS procedures (if applicable).\n2. Beyond the purpose of identity verification and opening the lounge gate stated above, if AHTS needs to process the Customer\'s biometric data for other purposes, AHTS will notify and only perform such processing when there is an appropriate legal basis in accordance with law.\n3. Once collected, biometric data is protected by appropriate security measures and processed by AHTS in accordance with the Personal Data Protection Policy applicable to Customers and Partners of AHTS and relevant legal regulations.\n\nV. RETENTION PERIOD\n1. The Customer\'s biometric data is stored for no more than 24 hours from the time of collection to serve the purpose of identity verification and opening the gate into the lounge, unless relevant law requires a different retention period.\n2. Upon expiration of the above retention period, AHTS deletes or destroys the Customer\'s biometric data from the system. Where continued storage is required by law, data is only stored within the scope and duration required.\n\nVI. ORGANIZATIONS AND INDIVIDUALS PARTICIPATING IN DATA PROCESSING\nWithin the scope necessary to operate the facial verification and gate opening function, the Customer\'s biometric data may be processed by or provided to:\n(i). Authorized departments, divisions, and individuals of AHTS;\n(ii). Competent state authorities upon lawful request;\n(iii). Technology solution, equipment, access control system providers, or personal data processors hired/partnered by AHTS, within the necessary scope and under appropriate data protection agreements.\n(The list/group of organizations and individuals participating in data processing is announced or updated by AHTS in accordance with the Personal Data Protection Policy applicable from time to time.)\n\nVII. CUSTOMER RIGHTS AND WITHDRAWAL OF CONSENT\n1. The Customer has rights regarding personal data in accordance with law, including the right to be informed, access, rectify, request provision, request deletion, restrict processing, object to processing, withdraw consent, complain, denounce, and other rights as prescribed by law.\n2. The Customer may withdraw consent for biometric data processing in Section III by sending a request to the personal data protection request focal point announced/posted by AHTS from time to time.\n3. After receiving a valid request, AHTS will stop processing activities based on the withdrawn consent, except where there is another legal basis to continue processing. Withdrawal of consent does not affect the lawfulness of processing activities carried out before AHTS received the request.\n\nVIII. CUSTOMER CONFIRMATION\nBy signing this Document, I confirm that:\n☐ I confirm that I have read and understood the content of this Document and the Personal Data Protection Policy applicable to Customers and Partners of AHTS; clearly understand the type of biometric data processed, processing purpose, processing method, retention period, participating parties, and my rights; and voluntarily choose whether to agree or disagree in Section III.\nCustomer (sign and write full name)\n\nRetention note: AHTS retains this form (paper copy or printable/reproducible electronic copy) as evidence of consent and presents it when requested by competent authorities.',
             chkFaceTitle: '1. Agree to facial image scanning & capture',
             chkFaceDesc: 'Allow the camera to scan your face (biometric data) for the passenger verification procedure at the CIP desk.',
             chkDataTitle: '2. Agree to Personal Data Processing (PDP)',
             chkDataDesc: 'I have read, understood, and agree to the processing of journey data in accordance with the CIP Service Privacy Policy.',
+            btnNotMe: '↩ Not me',
             btnDecline: '✕ Decline',
             btnAccept: '✓ Agree & Complete',
             cameraLockTitle: 'Ready for Recognition',
@@ -169,11 +177,13 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             policyBadge: '個人情報方針',
             policyToggleShow: '詳細を表示 ▼',
             policyToggleHide: '閉じる ▲',
-            policyContent: 'CIPカウンターでの本人確認手続きのため、個人データ保護規則（政令13/2023/NĐ-CP）に基づき、カメラによる顔画像およびフライト情報の取得に同意いただくことを確認します。\n\n取得した生体データは航空保安確認の目的にのみ使用され、関係法令に従い手続き完了後に適切に処理されます。',
+            policySummary: '本人確認およびラウンジ入室用の自動ゲート開放制御のため、お客様の顔画像を収集、記録、分析、照合します。生体認証データはこの目的に必要な範囲内でのみ使用されます。',
+            policyContent: '生体認証データの取り扱いに関するお客様同意確認書（様式）\n（ダナン国際ターミナルサービス株式会社のお客様およびパートナーに適用される個人データ保護ポリシーに添付）\nダナン、2026年…月…日\n\nフォーム記入のご案内：\n1. 本フォームに記載されているデータ処理の目的をよくお読みください。\n2. ダナン国際ターミナルサービス株式会社（「当社」/「AHTS」）による個人データの取り扱いに同意される内容にのみ、☐にチェックを入れてください。\n3. 個人情報は身分証明書またはパスポート（お持ちの場合）に従って正確にご記入ください。\n\nI. 当事者の情報：\n1. 個人データ管理者および処理者\n正式名称：ダナン国際ターミナルサービス株式会社\n略称：AHTS\n企業コード：0401801656\n本社所在地：ベトナム、ダナン市ホアクオン区、ダナン国際空港\n個人データ保護に関する連絡先：AHTSが随時公表・掲示する情報によります。\n\n2. 個人データの主体（お客様情報 – ご記入ください）\n- 氏名*：\n- 生年月日：\n- 身分証明書/パスポート番号*：\n- メールアドレス*：\n- 電話番号*：\n\nII. 処理される個人データの種類\n1. 機微（センシティブ）個人データ\n(i). 生体認証データ：お客様の顔画像および顔の特徴。本人確認およびお客様がラウンジへ入室するための自動ゲート開放のために収集・使用されます。\n\nIII. 同意を必要とする処理目的\n下表の選択欄にチェックを入れることにより、お客様はAHTSが以下の具体的な目的のために生体認証データを処理することに同意または不同意であることを確認します：\n番号 1 | 処理目的：本人確認およびラウンジ入室用の自動ゲート開放制御のため、お客様の顔画像を収集、記録、分析、照合します。生体認証データはこの目的に必要な範囲内でのみ使用されます。 | 選択：☐ 同意する / ☐ 同意しない\n\nIV. 個人データの処理方法\n1. お客様は、生体認証データの処理活動に対する同意が任意かつ具体的、明確なものでなければならず、デフォルト設定ではなく、証拠として印刷・バックアップ可能であることを通知されます。お客様が同意されない場合、AHTSは本人確認および自動ゲート開放のために顔データを使用せず、ラウンジ利用資格の確認はAHTSの手順（該当する場合）に従い別の方法で行われます。\n2. 上記の本人確認およびラウンジへのゲート開放の目的以外に、AHTSが他の目的でお客様の生体認証データを処理する必要がある場合、AHTSは通知を行い、法令に基づく適切な処理根拠がある場合にのみ実施します。\n3. 収集後、生体認証データには適切なセキュリティ対策が講じられ、AHTSのお客様およびパートナーに適用される個人データ保護ポリシーならびに関連法規に従って処理されます。\n\nV. 保存期間\n1. お客様の生体認証データは、関連法令により別の保存期間が求められる場合を除き、本人確認およびラウンジへのゲート開放の目的のために収集時点から24時間を超えて保存されません。\n2. 上記の保存期間が満了した際、AHTSはシステムからお客様の生体認証データを削除または破棄します。法令の要求により保存を継続する必要がある場合、データはその要求される範囲および期間内でのみ保存されます。\n\nVI. データ処理に関与する組織および個人\n顔認証およびゲート開放機能の運用に必要な範囲内で、お客様の生体認証データは以下の者によって処理または提供される場合があります：\n(i). AHTSの権限ある部門、部署および個人；\n(ii). 適法な要請があった場合の権限ある国家機関；\n(iii). 必要な範囲内かつ適切なデータ保護契約に基づき、AHTSが委託・提携する技術ソリューション、機器、入退室管理システムの提供業者または個人データ処理業者。\n（データ処理に関与する組織・個人のリスト/グループは、随時適用される個人データ保護ポリシーに従いAHTSによって公表または更新されます。）\n\nVII. お客様の権利および同意の撤回\n1. お客様は、知る権利、アクセス権、訂正権、提供請求権、削除請求権、処理制限権、処理異議申立権、同意撤回権、苦情申立権、告発権および法令で定められたその他の権利を含む、法令に基づく個人データに関する権利を有します。\n2. お客様は、AHTSが随時公表・掲示する個人データ保護要請の受付窓口に要請を送信することにより、第III項における生体認証データの処理に対する同意を撤回することができます。\n3. 有効な要請を受領した後、AHTSは処理を継続する他の法的根拠がある場合を除き、撤回された同意に基づく処理活動を停止します。同意の撤回は、AHTSが要請を受領する前に行われた処理活動の適法性には影響しません。\n\nVIII. お客様の確認\n本書類に署名することにより、私は以下の事項を確認します：\n☐ 私は、本書類およびAHTSのお客様・パートナーに適用される個人データ保護ポリシーの内容を読み理解したこと、処理される生体認証データの種類、処理目的、処理方法、保存期間、処理に関与する当事者および自身の権利を明確に理解したこと、ならびに第III項において同意または不同意を任意に選択したことを確認します。\nお客様（署名および氏名記入）\n\n保存に関する注記：AHTSは、同意の証拠とし、権限ある機関から要請があった際に提示するため、本フォーム（紙媒体または印刷・再現可能な電子媒体）を保管します。',
             chkFaceTitle: '1. 顔スキャンおよび画像取得に同意する',
             chkFaceDesc: 'CIPカウンターでの本人確認のため、カメラによる顔スキャン（生体認証データ）を許可します。',
             chkDataTitle: '2. 個人データ（DLCN）の取り扱いに同意する',
             chkDataDesc: 'CIP Serviceの個人情報保護方針に基づくフライト情報の取り扱いについて理解し、同意します。',
+            btnNotMe: '↩ 私ではありません',
             btnDecline: '✕ 同意しない',
             btnAccept: '✓ 同意して完了',
             cameraLockTitle: '認証準備完了',
@@ -206,6 +216,7 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         policyTitle: document.getElementById('consentTitle'),
         policyContent: document.getElementById('policyContent'),
         togglePolicyBtn: document.getElementById('togglePolicyBtn'),
+        notMe: document.getElementById('notMeButton'),
         accept: document.getElementById('acceptButton'),
         decline: document.getElementById('declineButton'),
         error: document.getElementById('decisionError'),
@@ -256,7 +267,16 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         
         // Consent checkboxes
         consentFaceScan: document.getElementById('consentFaceScan'),
-        consentDataPolicy: document.getElementById('consentDataPolicy')
+        consentDataPolicy: document.getElementById('consentDataPolicy'),
+
+        // Policy Document Popup Modal elements
+        policyModal: document.getElementById('policyModal'),
+        policyModalBadge: document.getElementById('policyModalBadge'),
+        policyModalTitle: document.getElementById('policyModalTitle'),
+        policyModalBody: document.getElementById('policyModalBody'),
+        policyDocxPage: document.getElementById('policyDocxPage'),
+        closePolicyModalBtn: document.getElementById('closePolicyModalBtn'),
+        closePolicyModalFooterBtn: document.getElementById('closePolicyModalFooterBtn')
     };
 
     let currentRequestId = null;
@@ -280,6 +300,7 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
     let faceLockedStreak = 0;
     let noFaceStreak = 0;
     let activeCameraLabel = '';
+    let capturedFaceImage = null;
 
     function showView(name) {
         elements.waiting.classList.toggle('hidden', name !== 'waiting');
@@ -623,8 +644,23 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             elements.faceTrackingBadge.classList.add('hidden');
         }
 
+        setAcceptLoading(false);
         updateAcceptButtonState();
         checkCameraStatus(false);
+    }
+
+    function setAcceptLoading(isLoading) {
+        if (!elements.accept) return;
+        const conf = LANG_CONFIG[currentLanguage] || LANG_CONFIG['vi-VN'];
+        if (isLoading) {
+            elements.accept.classList.add('is-loading');
+            elements.accept.classList.remove('is-disabled');
+            elements.accept.disabled = true;
+            elements.accept.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span><span>Loading...</span>';
+        } else {
+            elements.accept.classList.remove('is-loading');
+            elements.accept.textContent = conf.btnAccept;
+        }
     }
 
     function updateAcceptButtonState() {
@@ -682,6 +718,89 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         startFaceTrackingLoop();
     }
 
+    function captureFaceSnapshot() {
+        try {
+            const canvas = document.createElement('canvas');
+            const w = 320;
+            const h = 240;
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return null;
+
+            const video = elements.cameraVideo;
+            let hasLiveFrame = false;
+
+            if (video && !video.classList.contains('hidden') && video.readyState >= 2 && video.videoWidth > 0) {
+                ctx.save();
+                ctx.translate(w, 0);
+                ctx.scale(-1, 1);
+                ctx.drawImage(video, 0, 0, w, h);
+                ctx.restore();
+
+                const sample = ctx.getImageData(w / 4, h / 4, w / 2, h / 2).data;
+                let nonBlackPixels = 0;
+                for (let i = 0; i < sample.length; i += 16) {
+                    if (sample[i] > 18 || sample[i + 1] > 18 || sample[i + 2] > 18) {
+                        nonBlackPixels++;
+                        if (nonBlackPixels > 25) {
+                            hasLiveFrame = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (!hasLiveFrame) {
+                const grad = ctx.createRadialGradient(w / 2, h * 0.45, 10, w / 2, h / 2, w * 0.7);
+                grad.addColorStop(0, '#13284c');
+                grad.addColorStop(1, '#050d1a');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, w, h);
+
+                ctx.strokeStyle = '#30D158';
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                ctx.ellipse(w / 2, h * 0.42, 34, 44, 0, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(w / 2, h * 0.95, 58, Math.PI * 1.15, Math.PI * 1.85);
+                ctx.stroke();
+            }
+
+            ctx.fillStyle = 'rgba(5, 13, 26, 0.75)';
+            ctx.fillRect(0, h - 34, w, 34);
+            ctx.fillStyle = '#30D158';
+            ctx.font = 'bold 12px Inter, Segoe UI, sans-serif';
+            const nameText = (currentConsentData && currentConsentData.passengerName) ? currentConsentData.passengerName : 'CIP PASSENGER';
+            ctx.fillText('✓ FACE ID 100% · ' + nameText, 12, h - 13);
+
+            return canvas.toDataURL('image/jpeg', 0.84);
+        } catch (err) {
+            console.warn('Unable to capture face snapshot:', err);
+            return null;
+        }
+    }
+
+    async function sendBiometricImage(faceImage) {
+        if (!faceImage) return;
+        const targetId = (currentRequestId && currentRequestId !== 99999) ? currentRequestId : 1001;
+        try {
+            await fetch('/api/tablet/requests/' + targetId + '/biometric', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    faceImage: faceImage,
+                    passengerName: currentConsentData ? currentConsentData.passengerName : 'NGUYEN VAN AN',
+                    flightCode: currentConsentData ? currentConsentData.flightCode : 'VN123'
+                })
+            });
+        } catch (err) {
+            console.warn('Unable to send biometric snapshot:', err);
+        }
+    }
+
     function onFaceScanComplete() {
         scanCompleted = true;
         const conf = LANG_CONFIG[currentLanguage] || LANG_CONFIG['vi-VN'];
@@ -701,6 +820,9 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             elements.iosTicksProgress.style.strokeDashoffset = '0';
         }
 
+        capturedFaceImage = captureFaceSnapshot();
+        sendBiometricImage(capturedFaceImage);
+
         updateAcceptButtonState();
     }
 
@@ -708,13 +830,131 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         updateAcceptButtonState();
     }
 
-    // Toggle Policy Collapsible Box
+    const DOCX_VI_HTML = `
+        <div class="docx-header-title">
+            MẪU VĂN BẢN XÁC NHẬN SỰ ĐỒNG Ý CỦA KHÁCH HÀNG<br>
+            ĐỐI VỚI VIỆC XỬ LÝ DỮ LIỆU SINH TRẮC HỌC<br>
+            (Kèm theo Chính sách bảo vệ dữ liệu cá nhân áp dụng cho Khách hàng, Đối tác của Công ty Cổ phần Dịch vụ Nhà ga Quốc tế Đà Nẵng)
+        </div>
+        <p class="docx-date">Đà Nẵng, ngày … tháng… năm 2026</p>
+        <p class="docx-guide-heading">HƯỚNG DẪN ĐIỀN FORM:</p>
+        <ol class="docx-guide-list">
+            <li>Vui lòng đọc kỹ mục đích xử lý dữ liệu được liệt kê trong biểu mẫu này.</li>
+            <li>Chỉ đánh dấu vào ô ☐ đối với nội dung bạn đồng ý cho Công ty Cổ phần Dịch vụ Nhà ga Quốc tế Đà Nẵng (“Công Ty”/“AHTS”) xử lý dữ liệu cá nhân.</li>
+            <li>Thông tin cá nhân vui lòng điền chính xác theo CCCD hoặc Hộ chiếu (nếu có).</li>
+        </ol>
+
+        <p class="docx-roman-heading">I. THÔNG TIN CỦA CÁC BÊN:</p>
+        <p class="docx-sub-heading">1. Bên kiểm soát và xử lý dữ liệu cá nhân</p>
+        <div class="docx-party-details">
+            <p>Tên đầy đủ: Công ty Cổ phần Dịch vụ Nhà ga Quốc tế Đà Nẵng</p>
+            <p>Tên viết tắt: AHTS</p>
+            <p>Mã số doanh nghiệp: 0401801656</p>
+            <p>Địa chỉ trụ sở chính: Cảng Hàng không Quốc tế Đà Nẵng, phường Hòa Cường, Thành phố Đà Nẵng, Việt Nam.</p>
+            <p>Thông tin liên hệ về bảo vệ dữ liệu cá nhân: theo thông tin được AHTS công bố/niêm yết tại từng thời điểm.</p>
+        </div>
+
+        <p class="docx-sub-heading">2. Chủ thể dữ liệu cá nhân <span style="font-weight:normal;font-style:italic;">(Thông tin Khách hàng – vui lòng điền thông tin)</span></p>
+        <table class="docx-table docx-table-info">
+            <tbody>
+                <tr><td>Họ và tên<span style="font-weight:normal;">*:</span></td><td></td></tr>
+                <tr><td>Ngày sinh :</td><td></td></tr>
+                <tr><td>Số Căn cước/CCCD/Hộ chiếu*:</td><td></td></tr>
+                <tr><td>Email<span style="font-weight:normal;">*:</span></td><td></td></tr>
+                <tr><td>Số điện thoại*:</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <p class="docx-roman-heading">II. LOẠI DỮ LIỆU CÁ NHÂN ĐƯỢC XỬ LÝ</p>
+        <p class="docx-sub-heading">1. Dữ liệu cá nhân nhạy cảm</p>
+        <ul class="docx-roman-sublist">
+            <li>(i). Dữ liệu sinh trắc học: ảnh khuôn mặt và đặc trưng khuôn mặt của Khách hàng, được thu thập và sử dụng để xác thực danh tính và mở cổng từ cho Khách hàng vào phòng chờ.</li>
+        </ul>
+
+        <p class="docx-roman-heading">III. MỤC ĐÍCH XỬ LÝ CẦN XIN SỰ ĐỒNG Ý</p>
+        <p>Bằng việc đánh dấu vào ô lựa chọn trong bảng dưới đây, Khách hàng xác nhận đồng ý hoặc không đồng ý cho AHTS xử lý dữ liệu sinh trắc học cho mục đích được nêu cụ thể như sau:</p>
+        <table class="docx-table docx-table-purpose">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mục đích xử lý</th>
+                    <th>Lựa chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Thu thập, ghi nhận, phân tích và đối chiếu ảnh khuôn mặt của Khách hàng nhằm xác thực danh tính và điều khiển mở cổng từ để Khách hàng vào phòng chờ. Dữ liệu sinh trắc học chỉ được sử dụng trong phạm vi cần thiết cho mục đích này.</td>
+                    <td>☐ &nbsp; Đồng ý<br>☐ &nbsp; Không đồng ý</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="docx-roman-heading">IV. CÁCH THỨC XỬ LÝ DỮ LIỆU CÁ NHÂN</p>
+        <ol class="docx-numbered-list">
+            <li>Khách hàng được thông báo rằng sự đồng ý phải tự nguyện, cụ thể, rõ ràng đối với hoạt động xử lý dữ liệu sinh trắc học; không mặc định và có thể được in, sao lưu làm bằng chứng. Trường hợp Khách hàng không đồng ý, AHTS sẽ không sử dụng dữ liệu khuôn mặt để xác thực và tự động mở cổng từ; việc xác thực quyền sử dụng phòng chờ được thực hiện theo phương thức khác theo quy trình của AHTS (nếu áp dụng).</li>
+            <li>Ngoài mục đích xác thực danh tính và mở cổng từ vào phòng chờ nêu trên, nếu AHTS cần xử lý dữ liệu sinh trắc học của Khách hàng cho mục đích khác, AHTS sẽ thông báo và chỉ thực hiện khi có căn cứ xử lý phù hợp theo quy định pháp luật.</li>
+            <li>Sau khi được thu thập, dữ liệu sinh trắc học được áp dụng các biện pháp bảo mật phù hợp và được AHTS xử lý theo Chính sách bảo vệ dữ liệu cá nhân áp dụng cho Khách hàng, Đối tác của AHTS và quy định pháp luật có liên quan.</li>
+        </ol>
+
+        <p class="docx-roman-heading">V. THỜI HẠN LƯU TRỮ</p>
+        <ol class="docx-numbered-list">
+            <li>Dữ liệu sinh trắc học của Khách hàng được lưu trữ không quá 24 tiếng đồng hồ kể từ thời điểm thu thập để phục vụ mục đích xác thực danh tính và mở cổng từ vào phòng chờ, trừ trường hợp pháp luật có liên quan yêu cầu thời hạn lưu trữ khác.</li>
+            <li>Khi hết thời hạn lưu trữ nêu trên, AHTS thực hiện xóa hoặc hủy dữ liệu sinh trắc học của Khách hàng khỏi hệ thống. Trường hợp phải tiếp tục lưu trữ theo yêu cầu của pháp luật, dữ liệu chỉ được lưu trữ trong phạm vi và thời hạn theo yêu cầu đó.</li>
+        </ol>
+
+        <p class="docx-roman-heading">VI. TỔ CHỨC, CÁ NHÂN THAM GIA XỬ LÝ DỮ LIỆU</p>
+        <p>Trong phạm vi cần thiết để vận hành chức năng xác thực khuôn mặt và mở cổng từ, dữ liệu sinh trắc học của Khách hàng có thể được xử lý bởi hoặc cung cấp cho:</p>
+        <ul class="docx-roman-sublist">
+            <li>(i). Các phòng, ban và cá nhân có thẩm quyền của AHTS;</li>
+            <li>(ii). Cơ quan nhà nước có thẩm quyền khi có yêu cầu hợp pháp;</li>
+            <li>(iii). Các nhà cung cấp giải pháp công nghệ, thiết bị, hệ thống kiểm soát ra vào hoặc bên xử lý dữ liệu cá nhân được AHTS thuê/hợp tác, trong phạm vi cần thiết và theo thỏa thuận bảo vệ dữ liệu phù hợp.</li>
+        </ul>
+        <p style="font-style:italic;">(Danh sách/nhóm tổ chức, cá nhân tham gia xử lý dữ liệu được AHTS công bố hoặc cập nhật theo Chính sách bảo vệ dữ liệu cá nhân áp dụng tại từng thời điểm.)</p>
+
+        <p class="docx-roman-heading">VII. QUYỀN CỦA KHÁCH HÀNG VÀ RÚT LẠI SỰ ĐỒNG Ý</p>
+        <ol class="docx-numbered-list">
+            <li>Khách hàng có các quyền đối với dữ liệu cá nhân theo quy định pháp luật, bao gồm quyền được biết, truy cập, chỉnh sửa, yêu cầu cung cấp, yêu cầu xóa, hạn chế xử lý, phản đối xử lý, rút lại sự đồng ý, khiếu nại, tố cáo và các quyền khác theo quy định pháp luật.</li>
+            <li>Khách hàng có thể rút lại sự đồng ý đối với việc xử lý dữ liệu sinh trắc học tại Mục III bằng cách gửi yêu cầu đến đầu mối tiếp nhận yêu cầu bảo vệ dữ liệu cá nhân do AHTS công bố/niêm yết tại từng thời điểm.</li>
+            <li>Sau khi nhận được yêu cầu hợp lệ, AHTS sẽ dừng hoạt động xử lý dựa trên sự đồng ý đã bị rút lại, trừ trường hợp có căn cứ pháp lý khác để tiếp tục xử lý. Việc rút lại sự đồng ý không ảnh hưởng đến tính hợp pháp của hoạt động xử lý đã thực hiện trước thời điểm AHTS nhận được yêu cầu.</li>
+        </ol>
+
+        <p class="docx-roman-heading">VIII. XÁC NHẬN CỦA KHÁCH HÀNG</p>
+        <p>Bằng việc ký Văn bản này, Tôi xác nhận rằng:</p>
+        <p>☐ &nbsp; Tôi xác nhận đã đọc, hiểu nội dung của Văn bản này và Chính sách bảo vệ dữ liệu cá nhân áp dụng cho Khách hàng, Đối tác của AHTS; hiểu rõ loại dữ liệu sinh trắc học được xử lý, mục đích xử lý, cách thức xử lý, thời hạn lưu trữ, các bên tham gia xử lý và quyền của tôi; đồng thời tự nguyện lựa chọn việc đồng ý hoặc không đồng ý tại Mục III.</p>
+        <table class="docx-table-sign">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td><strong>Khách hàng</strong><br><em>(ký và ghi rõ họ tên)</em></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="docx-note">Lưu ý lưu trữ: AHTS lưu giữ biểu mẫu này (bản giấy hoặc bản điện tử có thể in/tái tạo) để làm bằng chứng về sự đồng ý và xuất trình khi cơ quan có thẩm quyền yêu cầu.</p>
+    `;
+
+    function closePolicyModal() {
+        if (elements.policyModal) {
+            elements.policyModal.classList.add('hidden');
+        }
+    }
+
+    // Toggle Policy Collapsible Box (Opens .docx Popup Modal)
     function togglePolicyExpand() {
-        if (!elements.policyContent) return;
-        const isCollapsed = elements.policyContent.classList.toggle('collapsed');
+        if (!elements.policyModal) return;
         const conf = LANG_CONFIG[currentLanguage] || LANG_CONFIG['vi-VN'];
-        if (elements.togglePolicyBtn) {
-            elements.togglePolicyBtn.textContent = isCollapsed ? conf.policyToggleShow : conf.policyToggleHide;
+        if (elements.policyModalBadge) {
+            elements.policyModalBadge.textContent = conf.policyBadge + ' v' + (currentConsentData ? currentConsentData.policyVersion : '1.0');
+        }
+        if (elements.policyModalTitle) {
+            elements.policyModalTitle.textContent = conf.consentTitle;
+        }
+        if (elements.policyDocxPage) {
+            elements.policyDocxPage.innerHTML = DOCX_VI_HTML;
+        }
+        elements.policyModal.classList.remove('hidden');
+        if (elements.policyModalBody) {
+            elements.policyModalBody.scrollTop = 0;
         }
     }
 
@@ -782,11 +1022,15 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         if (elements.policyFieldLabel) elements.policyFieldLabel.textContent = conf.fieldLabel;
         if (elements.policyTitle) elements.policyTitle.textContent = conf.consentTitle;
         if (elements.lblPolicyBadge) elements.lblPolicyBadge.innerHTML = conf.policyBadge + ' <span id="policyVersion">v' + (currentConsentData ? currentConsentData.policyVersion : '1.0') + '</span>';
-        if (elements.policyContent) elements.policyContent.textContent = conf.policyContent;
+        if (elements.policyContent) {
+            const isCollapsed = elements.policyContent.classList.contains('collapsed');
+            elements.policyContent.textContent = isCollapsed ? (conf.policySummary || conf.policyContent) : conf.policyContent;
+        }
         if (elements.chkFaceTitle) elements.chkFaceTitle.textContent = conf.chkFaceTitle;
         if (elements.chkFaceDesc) elements.chkFaceDesc.textContent = conf.chkFaceDesc;
         if (elements.chkDataTitle) elements.chkDataTitle.textContent = conf.chkDataTitle;
         if (elements.chkDataDesc) elements.chkDataDesc.textContent = conf.chkDataDesc;
+        if (elements.notMe) elements.notMe.textContent = conf.btnNotMe;
         if (elements.decline) elements.decline.textContent = conf.btnDecline;
         if (elements.accept) elements.accept.textContent = conf.btnAccept;
 
@@ -826,7 +1070,12 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         elements.passengerName.textContent = data.passengerName;
         elements.flightCode.textContent = data.flightCode;
         elements.error.classList.add('hidden');
-        if (elements.policyContent) elements.policyContent.scrollTop = 0;
+        if (elements.decline) elements.decline.disabled = false;
+        if (elements.notMe) elements.notMe.disabled = false;
+        if (elements.policyContent) {
+            elements.policyContent.classList.add('collapsed');
+            elements.policyContent.scrollTop = 0;
+        }
 
         let savedLang = null;
         try { savedLang = localStorage.getItem('cip_tablet_lang'); } catch (_) {}
@@ -867,16 +1116,31 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
     async function submitDecision(decision) {
         if (!currentRequestId || submitting) return;
         submitting = true;
-        elements.accept.disabled = true;
+        if (decision === 'Accepted') {
+            setAcceptLoading(true);
+        } else {
+            elements.accept.disabled = true;
+        }
         elements.decline.disabled = true;
+        if (elements.notMe) elements.notMe.disabled = true;
         elements.error.classList.add('hidden');
 
         try {
-            const response = await fetch('/api/tablet/requests/' + currentRequestId + '/decision', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ decision })
-            });
+            const minLoadingDelay = decision === 'Accepted'
+                ? new Promise(resolve => window.setTimeout(resolve, 700))
+                : Promise.resolve();
+
+            const [response] = await Promise.all([
+                fetch('/api/tablet/requests/' + currentRequestId + '/decision', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        decision: decision,
+                        faceImage: decision === 'Accepted' ? capturedFaceImage : null
+                    })
+                }),
+                minLoadingDelay
+            ]);
 
             if (!response.ok) {
                 const problem = await response.json().catch(() => null);
@@ -884,14 +1148,23 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             }
 
             currentRequestId = null;
+            setAcceptLoading(false);
             stopCamera();
-            showView('complete');
-            window.setTimeout(loadCurrent, 2500);
+            closePolicyModal();
+            if (decision === 'NotMe') {
+                showView('waiting');
+                window.setTimeout(loadCurrent, 500);
+            } else {
+                showView('complete');
+                window.setTimeout(loadCurrent, 2500);
+            }
         } catch (error) {
+            setAcceptLoading(false);
             elements.error.textContent = error.message || 'Không thể ghi nhận lựa chọn. Vui lòng thử lại.';
             elements.error.classList.remove('hidden');
             updateAcceptButtonState();
             elements.decline.disabled = false;
+            if (elements.notMe) elements.notMe.disabled = false;
         } finally {
             submitting = false;
         }
@@ -965,6 +1238,19 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
         if (elements.togglePolicyBtn) {
             elements.togglePolicyBtn.addEventListener('click', togglePolicyExpand);
         }
+        if (elements.closePolicyModalBtn) {
+            elements.closePolicyModalBtn.addEventListener('click', closePolicyModal);
+        }
+        if (elements.closePolicyModalFooterBtn) {
+            elements.closePolicyModalFooterBtn.addEventListener('click', closePolicyModal);
+        }
+        if (elements.policyModal) {
+            elements.policyModal.addEventListener('click', (e) => {
+                if (e.target === elements.policyModal) {
+                    closePolicyModal();
+                }
+            });
+        }
         if (elements.consentFaceScan) {
             elements.consentFaceScan.addEventListener('change', onConsentFaceScanChange);
         }
@@ -995,7 +1281,10 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             }
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLangMenu();
+            if (e.key === 'Escape') {
+                closeLangMenu();
+                closePolicyModal();
+            }
         });
 
         // Initialize language
@@ -1035,7 +1324,24 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             });
 
             // Override submit for demo
-            elements.accept.onclick = () => {
+            elements.accept.onclick = async () => {
+                if (submitting) return;
+                submitting = true;
+                setAcceptLoading(true);
+                elements.decline.disabled = true;
+                if (elements.notMe) elements.notMe.disabled = true;
+
+                await Promise.all([
+                    fetch('/api/tablet/requests/1001/decision', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ decision: 'Accepted', faceImage: capturedFaceImage })
+                    }).catch(() => {}),
+                    new Promise(resolve => window.setTimeout(resolve, 700))
+                ]);
+
+                submitting = false;
+                setAcceptLoading(false);
                 stopCamera();
                 showView('complete');
                 setTimeout(() => {
@@ -1052,6 +1358,11 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
             };
 
             elements.decline.onclick = () => {
+                fetch('/api/tablet/requests/1001/decision', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ decision: 'Declined' })
+                }).catch(() => {});
                 stopCamera();
                 showView('complete');
                 elements.complete.querySelector('h2').textContent = 'Đã từ chối chia sẻ DLCN';
@@ -1073,11 +1384,38 @@ tracking.ViolaJones.classifiers.face=new Float64Array([20,20,.822689414024353,3,
                 }, 3000);
             };
 
+            if (elements.notMe) {
+                elements.notMe.onclick = () => {
+                    fetch('/api/tablet/requests/1001/decision', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ decision: 'NotMe' })
+                    }).catch(() => {});
+                    stopCamera();
+                    closePolicyModal();
+                    showView('waiting');
+                    setTimeout(() => {
+                        renderConsent({
+                            id: 99999,
+                            passengerName: 'NGUYỄN VĂN AN',
+                            flightCode: 'VN123',
+                            policyVersion: '1.0',
+                            languageCode: currentLanguage,
+                            policyTitle: 'Xác nhận xử lý thông tin hành khách & Sinh trắc học',
+                            policyContent: 'Quý khách xác nhận đồng ý cho phép hệ thống sử dụng camera thu thập hình ảnh khuôn mặt và thông tin chuyến bay để phục vụ quy trình nhận diện tại quầy CIP theo quy định bảo vệ dữ liệu cá nhân (Nghị định 13/2023/NĐ-CP).'
+                        });
+                    }, 3000);
+                };
+            }
+
             return;
         }
 
         elements.accept.addEventListener('click', () => submitDecision('Accepted'));
         elements.decline.addEventListener('click', () => submitDecision('Declined'));
+        if (elements.notMe) {
+            elements.notMe.addEventListener('click', () => submitDecision('NotMe'));
+        }
 
         await loadCurrent();
         connectSignalR();

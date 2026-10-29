@@ -33,7 +33,8 @@ public sealed record SourcePassengerWithConsent(
     string? UserName,
     string? FullName,
     string ConsentStatus,
-    DateTime? ConfirmedAt);
+    DateTime? ConfirmedAt,
+    string? FaceImageUrl = null);
 
 public sealed record ConsentDisplay(
     int Id,
@@ -52,7 +53,8 @@ public sealed record ConsentDisplay(
 public sealed record DpoConsentState(
     int Id,
     string Status,
-    DateTime? ConfirmedAt);
+    DateTime? ConfirmedAt,
+    string? FaceImageUrl = null);
 
 public enum QueueForDisplayResult
 {

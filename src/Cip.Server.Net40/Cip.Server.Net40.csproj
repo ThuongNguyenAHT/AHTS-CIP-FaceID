@@ -44,6 +44,9 @@
     <EmbeddedResource Include="..\Cip.Server\wwwroot\js\tablet.js">
       <LogicalName>Cip.Server.Net40.Assets.tablet.js</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\Cip.Server\wwwroot\js\tracking-face.min.js">
+      <LogicalName>Cip.Server.Net40.Assets.tracking-face.min.js</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 
   <Target Name="CreateLegacyIisSite" AfterTargets="Build">

@@ -35,6 +35,7 @@ namespace Cip.Server.Net40.Domain
         public int Id { get; set; }
         public string Status { get; set; }
         public DateTime? ConfirmedAt { get; set; }
+        public string FaceImageUrl { get; set; }
     }
 
     public sealed class ConsentDisplay

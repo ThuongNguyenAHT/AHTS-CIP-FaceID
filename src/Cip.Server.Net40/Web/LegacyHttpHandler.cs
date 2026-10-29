@@ -76,6 +76,10 @@ namespace Cip.Server.Net40.Web
                     RequireMethod(context, "GET");
                     WriteAsset(context, "tablet.js", "application/javascript; charset=utf-8");
                     return;
+                case LegacyEndpoint.TrackingFaceJs:
+                    RequireMethod(context, "GET");
+                    WriteAsset(context, "tracking-face.min.js", "application/javascript; charset=utf-8");
+                    return;
                 case LegacyEndpoint.AdminJs:
                     RequireMethod(context, "GET");
                     WriteAsset(context, "admin.js", "application/javascript; charset=utf-8");
@@ -89,6 +93,9 @@ namespace Cip.Server.Net40.Web
                     return;
                 case LegacyEndpoint.TabletCurrent:
                     HandleTabletCurrent(context);
+                    return;
+                case LegacyEndpoint.TabletBiometric:
+                    HandleTabletBiometric(context);
                     return;
                 case LegacyEndpoint.TabletDecision:
                     HandleTabletDecision(context);
@@ -110,6 +117,9 @@ namespace Cip.Server.Net40.Web
                     return;
                 case LegacyEndpoint.DisplayPassenger:
                     HandleDisplayPassenger(context);
+                    return;
+                case LegacyEndpoint.SimulateScan:
+                    HandleSimulateScan(context);
                     return;
                 case LegacyEndpoint.HealthLive:
                     RequireMethod(context, "GET");
@@ -161,6 +171,22 @@ namespace Cip.Server.Net40.Web
             });
         }
 
+        private void HandleTabletBiometric(HttpContext context)
+        {
+            RequireMethod(context, "POST");
+            int id;
+            if (!int.TryParse(Convert.ToString(_routeData.Values["id"], CultureInfo.InvariantCulture), out id))
+            {
+                WriteJson(context, 400, new { message = "ID không hợp lệ." });
+                return;
+            }
+
+            IDictionary<string, object> body = ReadJsonObject(context);
+            string faceImage = GetString(body, "faceImage");
+            LegacyServices.Consents.SaveFaceImage(id, faceImage);
+            WriteJson(context, 200, new { status = "Saved", id = id });
+        }
+
         private void HandleTabletDecision(HttpContext context)
         {
             RequireMethod(context, "POST");
@@ -173,13 +199,21 @@ namespace Cip.Server.Net40.Web
 
             IDictionary<string, object> body = ReadJsonObject(context);
             string decision = GetString(body, "decision");
-            if (decision != "Accepted" && decision != "Declined")
+            if (decision != "Accepted" && decision != "Declined" && decision != "NotMe")
             {
-                WriteJson(context, 400, new { message = "Decision phải là Accepted hoặc Declined." });
+                WriteJson(context, 400, new { message = "Decision phải là Accepted, Declined hoặc NotMe." });
                 return;
             }
 
-            DecisionOutcome outcome = LegacyServices.Consents.SaveDecision(id, decision == "Accepted");
+            string faceImage = GetString(body, "faceImage");
+            if (decision == "Accepted" && !string.IsNullOrWhiteSpace(faceImage))
+            {
+                LegacyServices.Consents.SaveFaceImage(id, faceImage);
+            }
+
+            DecisionOutcome outcome = decision == "NotMe"
+                ? LegacyServices.Consents.CancelPending(id)
+                : LegacyServices.Consents.SaveDecision(id, decision == "Accepted");
             if (!outcome.Found)
             {
                 WriteJson(context, 404, new { message = "Không tìm thấy phiên xác nhận." });
@@ -293,11 +327,31 @@ namespace Cip.Server.Net40.Web
                     userName = passenger.UserName,
                     fullName = passenger.FullName,
                     consentStatus = state == null ? "NotSent" : state.Status,
-                    confirmedAt = state == null ? null : ToIsoString(state.ConfirmedAt)
+                    confirmedAt = state == null ? null : ToIsoString(state.ConfirmedAt),
+                    faceImageUrl = state == null ? LegacyServices.Consents.GetFaceImage(passenger.Id) : (state.FaceImageUrl ?? LegacyServices.Consents.GetFaceImage(passenger.Id))
                 });
             }
 
             WriteJson(context, 200, response);
+        }
+
+        private static void HandleSimulateScan(HttpContext context)
+        {
+            RequireMethod(context, "POST");
+            string ignored;
+            if (!RequireApiAuthentication(context, out ignored)) return;
+
+            SourcePassenger newPassenger = LegacyServices.SourcePassengers.SimulateNewPassengerScan();
+            WriteJson(context, 200, new
+            {
+                message = "Đã quét thành công vé giả lập mới!",
+                passenger = new
+                {
+                    id = newPassenger.Id,
+                    passengerName = newPassenger.PassengerName,
+                    flightCode = newPassenger.FlightCode
+                }
+            });
         }
 
         private static void HandleDisplayPassenger(HttpContext context)

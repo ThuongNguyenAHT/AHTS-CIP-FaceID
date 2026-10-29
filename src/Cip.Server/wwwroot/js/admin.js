@@ -76,6 +76,41 @@
         return cell;
     }
 
+    function openFacePreview(passenger) {
+        if (!passenger?.faceImageUrl) return;
+        let overlay = document.getElementById('adminFacePreviewModal');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'adminFacePreviewModal';
+            overlay.className = 'policy-modal-overlay';
+            overlay.innerHTML = `
+                <div class="policy-modal-dialog" style="width:min(460px,100%);">
+                    <header class="policy-modal-header">
+                        <div class="policy-modal-header-title">
+                            <span class="policy-badge">FACE ID · 100%</span>
+                            <strong id="adminFacePreviewTitle"></strong>
+                        </div>
+                        <button type="button" id="closeAdminFacePreviewBtn" class="policy-modal-close" aria-label="Đóng">✕</button>
+                    </header>
+                    <div class="policy-modal-body" style="padding:18px;display:flex;justify-content:center;background:#0f172a;">
+                        <img id="adminFacePreviewImg" src="" alt="Face ID" style="max-width:100%;border-radius:14px;border:2px solid #10b981;">
+                    </div>
+                </div>
+            `;
+            overlay.addEventListener('click', e => {
+                if (e.target === overlay || e.target.id === 'closeAdminFacePreviewBtn') {
+                    overlay.classList.add('hidden');
+                }
+            });
+            document.body.append(overlay);
+        }
+        const titleEl = document.getElementById('adminFacePreviewTitle');
+        const imgEl = document.getElementById('adminFacePreviewImg');
+        if (titleEl) titleEl.textContent = `${passenger.passengerName} · ${passenger.flightCode}`;
+        if (imgEl) imgEl.src = passenger.faceImageUrl;
+        overlay.classList.remove('hidden');
+    }
+
     function showMessage(message, type = 'success') {
         elements.message.textContent = message;
         elements.message.className = `admin-message is-${type}`;
@@ -173,6 +208,30 @@
             statusCell.append(badge);
             row.append(statusCell);
             row.append(createCell(formatDate(passenger.confirmedAt)));
+
+            const bioCell = document.createElement('td');
+            bioCell.className = 'biometric-cell';
+            if (passenger.faceImageUrl) {
+                const wrap = document.createElement('div');
+                wrap.className = 'biometric-thumb-wrap';
+                const img = document.createElement('img');
+                img.className = 'biometric-thumb';
+                img.src = passenger.faceImageUrl;
+                img.alt = `Ảnh sinh trắc học ${passenger.passengerName}`;
+                img.title = 'Nhấn để xem ảnh khuôn mặt đã quét';
+                img.addEventListener('click', event => {
+                    event.stopPropagation();
+                    openFacePreview(passenger);
+                });
+                const tag = document.createElement('span');
+                tag.className = 'biometric-tag';
+                tag.textContent = '✓ 100%';
+                wrap.append(img, tag);
+                bioCell.append(wrap);
+            } else {
+                bioCell.textContent = '—';
+            }
+            row.append(bioCell);
 
             if (checkbox.checked) row.classList.add('selected-row');
             if (selectable) {
@@ -313,6 +372,18 @@
         });
 
         await refresh();
+        window.setInterval(async () => {
+            if (document.hidden || elements.refresh.disabled) return;
+            try {
+                const currentPage = state.currentPage;
+                await loadDashboard();
+                state.passengers = await api('/api/admin/source-passengers');
+                state.currentPage = currentPage;
+                renderRows();
+            } catch {
+                // Ignore background poll errors
+            }
+        }, 2500);
     }
 
     initialize();
